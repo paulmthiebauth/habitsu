@@ -9,9 +9,6 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-  def show
-  end
-
   def create
     user_id = params[:user_id]
     task_name = params["task"]["name"]
@@ -24,6 +21,13 @@ class TasksController < ApplicationController
       flash[:notice] = task.errors.full_messages
       redirect_to "/users/#{params[:user_id]}"
     end
+  end
 
+  def complete
+    user_id = current_user.id
+    @task = Task.find(params[:id])
+    @task.update_attribute(:completed_at, Time.now)
+    @task.update_attribute(:completed, "True")
+    redirect_to "/users/#{user_id}"
   end
 end
