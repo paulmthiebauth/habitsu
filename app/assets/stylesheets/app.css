@@ -1,0 +1,102 @@
+
+body {
+  background-image: url('/images/stardust.png');
+  color: black;
+  background-color: #7887AB
+}
+
+a,
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.top-bar {
+  font-size: 20px;
+  background-color: #FF7F00;
+  font-weight: bold;
+}
+
+.top-bar-section {
+  display: inline-block;
+  float: right;
+}
+
+.top-bar-section li {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.logo {
+  display: inline-block;
+  margin: 1em 0;
+}
+
+.flash {
+  max-width: 50%;
+  border-radius:6px;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  background-color: #3B9089;
+  border-style: solid;
+  margin-bottom: 15px;
+}
+
+.inline{
+  display: inline-block
+}
+
+.container2 {
+  max-width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 10px;
+  border-radius: 4px;
+}
+
+.right_side {
+  font_weight: bold;
+}
+
+.sign-up {
+  max-width: 100%;
+  text-align: left;
+
+}
+
+.container3 {
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 12px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+#textArea {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+     font-family: Helvetica, Arial, sans-serif;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+
+.quote {
+  text-align: left;
+  font-weight: bold;
+}
+
+.header_text {
+  text-decoration: underline;
+}

@@ -1,0 +1,44 @@
+<div class="jumbotron">
+    <div class="row row-centered">
+        <div class="col-xs-4 col-centered">
+          <div class="header_text">
+          <h3> Statistics </h3>
+          </div>
+          <div class="quote">
+          Help others achieve their dreams and you will achieve yours.<br>
+          -Les Brown<br>
+        </div><br><br><br>
+          <b>Daily Completion Rates<b><br><br>
+          <img src="http://media.mediatemple.netdna-cdn.com/wp-content/uploads/2014/12/simple-bar-chart.png" width="90%">
+
+          </div>
+        <div class="col-xs-4 col-centered">
+          <div class="header_text">
+          <h3>To Do List</h3>
+          </div>
+          <div class="quote">
+          <% @tasks.each do |task|%>
+          -<%= task.name %><br><br>
+          <% end %><br><br>
+          </div>
+          <%= form_for [@user, @task] do |f| %>
+          <%= f.label :name, "New Task: " %><br /><br>
+          <%= f.text_field :name %><br /><br>
+          <%= f.submit %>
+          <% end %>
+          <br />
+
+          </div>
+        <div class="col-xs-4 col-centered">
+          <div class="header_text">
+          <h3>Habit Checklist</h3>
+          </div>
+          <div class="quote">
+          <% @habits.each do |habit|%>
+          -<%= habit.name %><br><br>
+          <% end %>
+        </div>
+
+          </div>
+    </div>
+</div>
