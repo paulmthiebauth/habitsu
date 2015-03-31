@@ -1,8 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 
 body {
   background-image: url('/images/stardust.png');
   color: black;
-  background-color: #7887AB
+  background-color: #7887AB;
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
 }
 
 a,
@@ -99,4 +101,12 @@ a:visited {
 
 .header_text {
   text-decoration: underline;
+}
+
+.todo_list {
+  margin-left: 15px;
+}
+
+.habit_list {
+  width: 80%;
 }

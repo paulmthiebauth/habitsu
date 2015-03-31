@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="container">
@@ -19,10 +20,16 @@
       <form class="navbar-form navbar-right ">
         <% if signed_in? %>
         <div class="navbar-form form-group">
-        <a href="/questions/new">Ask A Question</a>
+          <img src="http://s10.postimg.org/lmwcmnusl/user32.png">
         </div>
         <div class="navbar-form form-group">
-        <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+          <img src="http://s30.postimg.org/dlchktu31/CALENDAR_32.png">
+        </div>
+        <div class="navbar-form form-group">
+          <img src="http://s9.postimg.org/mqaghfauz/gear32.png">
+        </div>
+        <div class="navbar-form form-group">
+          <img src="http://s12.postimg.org/j5xi5rgx5/power32.png">
         </div>
         <% else %>
         <div class="navbar-form form-group">
