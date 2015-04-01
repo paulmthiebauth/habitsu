@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
       resources :tasks do
         member do
-          patch :complete
+          patch :complete, :incomplete
         end
       end
   # The priority is based upon order of creation: first created -> highest priority.

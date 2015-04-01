@@ -30,4 +30,13 @@ class TasksController < ApplicationController
     @task.update_attribute(:completed, "True")
     redirect_to "/users/#{user_id}"
   end
+
+  def incomplete
+    user_id = current_user.id
+    @task = Task.find(params[:id])
+    @task.update_attribute(:completed_at, nil)
+    @task.update_attribute(:completed, "False")
+    redirect_to "/users/#{user_id}"
+
+  end
 end

@@ -1,6 +1,6 @@
 <div class="jumbotron">
     <div class="row row-centered">
-        <div class="col-xs-4 col-centered">
+        <div class="col-xs-4 col-centered border-right">
           <div class="header_text">
           <h3> Statistics </h3>
           </div><br>
@@ -10,27 +10,31 @@
           </div><br><br><br>
           <div class="header_text">
           <h3>Daily Completion Rates</h3><br>
+          <div class="task-graph">
+          <div id="chart_div"></div>
           </div>
-          <img src="http://media.mediatemple.netdna-cdn.com/wp-content/uploads/2014/12/simple-bar-chart.png" width="90%">
+          </div>
+          </div>
 
-          </div>
-          <div class="col-xs-4 col-centered">
+
+          <div class="col-xs-4 col-centered border-right">
             <div class="todo_list">
           <div class="header_text">
           <h3>To Do List</h3>
           </div><br>
           <div class="quote">
+            <% @tasks = @tasks.sort_by {|x| x.created_at}.reverse %>
           <% @tasks.each do |task|%>
           <% if task.completed_at.nil? %>
               <% if Time.now - task.created_at > 800 %>
               <%= task.name %><br>
-              <img src="http://s9.postimg.org/ddnnijb97/reminder16.png" height="18px" width="18px"> : <%= link_to "Complete", complete_task_path(task.id), method: :patch %><br><br>
+              <img src="http://s9.postimg.org/ddnnijb97/reminder16.png"  height="18px" width="18px"> : <%= link_to "Complete", complete_task_path(task.id), method: :patch %><br><br>
               <% else %>
               <%= task.name %><br><%= link_to "Complete", complete_task_path(task.id), method: :patch %><br><br>
               <% end %>
           <% else %>
           <%= task.name %><br>
-          <img src="http://s28.postimg.org/8ygb3nim1/check16.png"> : <%= task.completed_at.asctime %><br><br>
+          <%= link_to image_tag("/check16.png"), incomplete_task_path(task.id), method: :patch %>: <%= task.completed_at.asctime %><br><br>
           <% end %>
           <% end %>
           </div>
@@ -40,88 +44,10 @@
           <%= f.text_field :name%><br>
           <%= f.submit %>
           <% end %>
-
-
           </div>
 
           <div class="col-xs-4 col-centered">
-            <script>
-            var chart = AmCharts.makeChart("chartdiv",
-{
-    "type": "serial",
-	"theme": "none",
-    "dataProvider": [{
-        "name": "Monday",
-        "points": 35654,
-        "color": "#7F8DA9",
-    }, {
-        "name": "Tuesday",
-        "points": 65456,
-        "color": "#FEC514",
-    }, {
-        "name": "Wednesday",
-        "points": 45724,
-        "color": "#DB4C3C",
-    }, {
-        "name": "Thursday",
-        "points": 65456,
-        "color": "#FEC514",
-    },{
-        "name": "Friday",
-        "points": 65456,
-        "color": "#FEC514",
-    },{
-        "name": "Saturday",
-        "points": 65456,
-        "color": "#FEC514",
-    },{
-        "name": "Sunday",
-        "points": 13654,
-        "color": "#DAF0FD",
-    }],
-    "valueAxes": [{
-        "maximum": 100000,
-        "minimum": 0,
-        "axisAlpha": 0,
-        "dashLength": 4,
-        "position": "left"
-    }],
-    "startDuration": 1,
-    "graphs": [{
-        "balloonText": "<span style='font-size:13px;'>[[category]]: <b>[[value]]</b></span>",
-        "bulletOffset": 16,
-        "bulletSize": 34,
-        "colorField": "color",
-        "cornerRadiusTop": 8,
-        "customBulletField": "bullet",
-        "fillAlphas": 0.8,
-        "lineAlpha": 0,
-        "type": "column",
-        "valueField": "points"
-    }],
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginLeft": 0,
-    "marginBottom": 0,
-    "autoMargins": false,
-    "categoryField": "name",
-    "categoryAxis": {
-        "axisAlpha": 0,
-        "gridAlpha": 0,
-        "inside": true,
-        "tickLength": 0
-    },
-	"exportConfig":{
-      "menuTop":"0px",
-      "menuRight":"0px",
-      "menuItems": [{
-      "icon": 'http://www.amcharts.com//lib/3/images/export.png',
-      "format": 'png'
-      }]
-    }
-});
-</script>
-
+            <div class="habit_list">
           <div class="header_text">
           <h3>Habit Checklist</h3>
           </div><br>
@@ -130,6 +56,7 @@
           <img src="http://s11.postimg.org/xbooefv27/Star16.png"> <%= habit.name %><br><br>
           <% end %>
           </div>
+        </div>
 
           </div>
     </div>

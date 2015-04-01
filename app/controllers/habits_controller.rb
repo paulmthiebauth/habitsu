@@ -10,6 +10,8 @@ class HabitsController < ApplicationController
   @habit_list_overhaul = [
   ]
 
+  @monday_score = 5
+
   def index
     @user = User.find(params[:user_id])
     @habit = @user.habits

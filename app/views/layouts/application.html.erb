@@ -2,10 +2,53 @@
 <html>
 <head>
   <title>Habitsu</title>
+  <link rel="icon" type="png" href="http://s18.postimg.org/5vo9ex7px/habitsu_logo.png">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+
+   // Load the Visualization API and the piechart package.
+   google.load('visualization', '1.0', {'packages':['bar']});
+
+   // Set a callback to run when the Google Visualization API is loaded.
+   google.setOnLoadCallback(drawChart);
+
+   // Callback that creates and populates a data table,
+   // instantiates the pie chart, passes in the data and
+   // draws it.
+   function drawChart() {
+
+     // Create the data table.
+     var data = new google.visualization.arrayToDataTable([
+       ['Daily Points', 'Score', {role: 'style'}],
+       ['Mon', 95, "gold"],
+       ['Tues', 70, 'color: #e5e4e2'],
+       ['Wed', 45, 'color: #e5e4e2'],
+       ['Thurs', 68, 'color: #e5e4e2'],
+       ['Fri', 81, 'color: #e5e4e2']
+     ]);
+
+     // Set chart options
+     var options = {width:400,
+                    height:400,
+                    legend: {position:'none'},
+                    chartArea:{ backgroundColor:'#E0E3CD'},
+                    colors: ['#135462', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+                    is3D: true
+                      // backgroundColor: {stroke:'black', fill:'#eee', strokeSize: 1}
+                    };
+
+     // Instantiate and draw our chart, passing in some options.
+     var chart = new google.charts.Bar(document.getElementById('chart_div'));
+    //  chart.draw(data, options);
+     chart.draw(data, google.charts.Bar.convertOptions(options));
+
+
+   }
+ </script>
+
 </head>
 <body>
 <div class="container">
@@ -20,16 +63,16 @@
       <form class="navbar-form navbar-right ">
         <% if signed_in? %>
         <div class="navbar-form form-group">
-          <img src="http://s10.postimg.org/lmwcmnusl/user32.png">
+          <img src="http://s28.postimg.org/k71294bah/user.png">
         </div>
         <div class="navbar-form form-group">
-          <img src="http://s30.postimg.org/dlchktu31/CALENDAR_32.png">
+          <img src="http://s17.postimg.org/nr9yvhc7v/calendar_full.png">
         </div>
         <div class="navbar-form form-group">
-          <img src="http://s9.postimg.org/mqaghfauz/gear32.png">
+          <img src="http://s9.postimg.org/8qvf9hmiz/process.png">
         </div>
         <div class="navbar-form form-group">
-          <img src="http://s12.postimg.org/j5xi5rgx5/power32.png">
+          <img src="http://s10.postimg.org/4zeyed2dh/shut_down.png">
         </div>
         <% else %>
         <div class="navbar-form form-group">
@@ -67,9 +110,11 @@
 
 
 <div class="container2" style="text-center">
-<img src="http://s30.postimg.org/630lt93pp/Screen_Shot_2015_03_25_at_8_47_22_PM.png" style="width: 8%; height: 8%"><br />
+
+<img src="http://s18.postimg.org/5vo9ex7px/habitsu_logo.png" style="width: 8%; height: 8%"><br />
 habitsu.<br />
-©2015
+©2015<br>
+<a href="https://codeclimate.com/repos/551aa941695680710200113a/feed"><img src="https://codeclimate.com/repos/551aa941695680710200113a/badges/edf43411ddd66bd96925/gpa.svg" /></a><br><br>
 </div>
 </body>
 </html>
