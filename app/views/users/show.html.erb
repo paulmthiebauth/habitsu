@@ -28,13 +28,13 @@
           <% if task.completed_at.nil? %>
               <% if Time.now - task.created_at > 800 %>
               <%= task.name %><br>
-              <img src="http://s9.postimg.org/ddnnijb97/reminder16.png"  height="18px" width="18px"> : <%= link_to "Complete", complete_task_path(task.id), method: :patch %><br><br>
+              <img src="http://s9.postimg.org/ddnnijb97/reminder16.png"  height="18px" width="18px"> : <%= link_to "Complete", complete_task_path(task.id), method: :patch%><br><br>
               <% else %>
               <%= task.name %><br><%= link_to "Complete", complete_task_path(task.id), method: :patch %><br><br>
               <% end %>
           <% else %>
           <%= task.name %><br>
-          <%= link_to image_tag("/check16.png"), incomplete_task_path(task.id), method: :patch %>: <%= task.completed_at.asctime %><br><br>
+          <%= link_to image_tag("/check16.png"), incomplete_task_path(task.id), method: :patch, data: { confirm: "Mark this task as incomplete?" }%>: <%= task.completed_at.asctime %><br><br>
           <% end %>
           <% end %>
           </div>
