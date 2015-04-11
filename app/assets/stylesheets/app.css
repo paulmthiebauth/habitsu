@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+/* @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 
 body {
   background-image: url('/images/stardust.png');
@@ -126,4 +126,173 @@ a:visited {
 
 .stats_header {
   position: relative;
+} */
+
+body {
+  color: #455a64;
+  background-color: #F5F8FA;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+
+body .row {
+  max-width: 73.125rem;
+  color: #455a64;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+  font-size: 16px;
+}
+
+body .row .row {
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.nav {
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.navright {
+  padding-top: 30px;
+  padding-right: 30px;
+}
+
+.navleft {
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 30px;
+  color: #455a64;
+  text-transform: uppercase;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+div .row {
+}
+
+.row {
+  border-radius: 4px;
+}
+
+.stats {
+  border-radius: 4px;
+}
+
+.stats h3 {
+  background-color: #C4E1FF;
+  border-bottom: 1px solid #e8e8e8;
+  text-align: center;
+  color: #455a64;
+  border-radius: 4px;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+.todo {
+
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 3px;
+  margin-right: 25px;
+  margin-left: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.todo h3 {
+  background-color: #FFDAB4;
+  text-align: center;
+  color: #455a64;
+  border-bottom: 1px solid #e8e8e8;
+  border-radius: 4px;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+.habit {
+
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 3px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+
+}
+
+.habit h3 {
+  background-color: #FFDAB4;
+  border-radius: 4px;
+  border-bottom: 1px solid #e8e8e8;
+  text-align: center;
+  color: #455a64;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+.quote {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  padding: 7.5px;
+  padding-bottom: 25px;
+  font-style: italic;
+  padding-left: 8px;
+  font-size: 18px;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+.graph {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 7.5px;
+}
+
+.complete-task {
+  background-color: #CEFFB5;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.new_task {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.task_label {
+}
+
+.task_name {
+}
+
+.task_submit {
+}
+
+.welcome-back {
+  padding-left: 30px;
+  font-size: 30px;
+  color: #455a64;
+  text-transform: uppercase;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+.navbutton {
+  opacity: 0.5;
+}
+
+.navbutton:hover{
+  opacity: 1;
+  transform:scale(1.05,1.05);
+}
+
+.dashbutton a {
+  color: #A1C5EA;
+}
+
+.dashbutton:hover a {
+  color: #008CBA;
+  text-decoration: underline;
+}
+
+.planname {
+  font-size: 25px;
+  margin-top: -25px;
+  text-align: center;
 }

@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
       root 'users#index'
       devise_for :users
-      resources :users
+
       resources :users do
+        member do
+          get 'current'
+          get 'yesterday'
+        end
         resources :tasks
         end
 
@@ -11,6 +15,8 @@ Rails.application.routes.draw do
           patch :complete, :incomplete
         end
       end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

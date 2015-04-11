@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   def complete
     user_id = current_user.id
     @task = Task.find(params[:id])
-    @task.update_attribute(:completed_at, Time.now)
+    @task.update_attribute(:completed_at, DateTime.now)
     @task.update_attribute(:completed, "True")
     redirect_to "/users/#{user_id}"
   end
@@ -37,6 +37,7 @@ class TasksController < ApplicationController
     @task.update_attribute(:completed_at, nil)
     @task.update_attribute(:completed, "False")
     redirect_to "/users/#{user_id}"
-
   end
+
+
 end

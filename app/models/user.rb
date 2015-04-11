@@ -5,11 +5,32 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tasks
 
-  has_many :habits, through: :plan
+  has_many :habits, through: :plans
+  has_many :plans, through: :signups
 
-  has_one :signup
-  has_one :plan, through: :signup
+  has_many :signups
+
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
+
+  def current
+    if @todays_date.nil?
+      @todays_date = DateTime.now
+    end
+    @todays_date
+  end
+
+  def today
+    @todays_date = DateTime.now
+  end
+
+  def yesterday
+    @todays_date = @todays_date.yesterday
+  end
+
+  def tomorrow
+    @todays_date = @todays_date.tomorrow
+  end
+
 end
