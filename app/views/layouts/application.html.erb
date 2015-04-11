@@ -1,80 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Habitsu</title>
-  <link rel="icon" type="png" href="http://s18.postimg.org/5vo9ex7px/habitsu_logo.png">
-  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="row">
-  <div class="large-12 columns">
-    <div class="nav">
+  <head>
+    <title>Habitsu</title>
+    <link rel="icon" type="png" href="http://s18.postimg.org/5vo9ex7px/habitsu_logo.png">
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
     <div class="row">
+      <div class="large-12 columns">
+        <div class="nav">
+          <div class="row">
 
 
 
-          <div class="large-3 columns">
-            <div class="navleft">
+            <div class="large-3 columns">
+              <div class="navleft">
 
-          <div class="dashbutton"><%= link_to "Dashboard", user_path(current_user) %></div>
+                <div class="dashbutton"><%= link_to "Dashboard", user_path(current_user) %></div>
 
+              </div>
+            </div>
+            <div class="large-9 columns">
+              <div class="navright">
+                <ul class="inline-list right">
+
+                  <% if signed_in? %>
+                    <li><div class="navbutton"><%= link_to image_tag("/USER-1.png"), users_path %></div></li>
+                    <li><div class="navbutton"><%= link_to image_tag("/CALENDAR-1.png"), users_path %></div></li>
+                    <li><div class="navbutton"><%= link_to image_tag("/OPTIONS-1.png"), edit_user_registration_path %></div></li>
+                    <li><div class="navbutton"><%= link_to image_tag("/LOGOUT-1.png"), destroy_user_session_path %></div></li>
+                  <% else %>
+                    <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                    <li><%= link_to "Sign In", new_user_session_path %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
           </div>
-          </div>
-          <div class="large-9 columns">
-            <div class="navright">
-            <ul class="inline-list right">
-
-              <% if signed_in? %>
-              <li><div class="navbutton"><%= link_to image_tag("/USER-1.png"), users_path %></div></li>
-              <li><div class="navbutton"><%= link_to image_tag("/CALENDAR-1.png"), users_path %></div></li>
-              <li><div class="navbutton"><%= link_to image_tag("/OPTIONS-1.png"), edit_user_registration_path %></div></li>
-              <li><div class="navbutton"><%= link_to image_tag("/LOGOUT-1.png"), destroy_user_session_path %></div></li>
-              <% else %>
-              <li><%= link_to "Sign Up", new_user_registration_path %></li>
-              <li><%= link_to "Sign In", new_user_session_path %></li>
-              <% end %>
-            </ul>
-          </div>
-          </div>
-        </div>
         </div>
 
         <% if flash.any? %>
 
-            <div class="flash">
-                <% if alert != nil %>
-                <%= alert %>
-                <% elsif notice.is_a? String %>
-                <%= notice %>
-                <% elsif notice.size == 1 %>
-                <%= notice.first %>
-                <% else %>
-                <% flash[:notice].each do |flash| %>
+          <div class="flash">
+            <% if alert != nil %>
+              <%= alert %>
+            <% elsif notice.is_a? String %>
+              <%= notice %>
+            <% elsif notice.size == 1 %>
+              <%= notice.first %>
+            <% else %>
+              <% flash[:notice].each do |flash| %>
                 <%= flash %><br />
-                <% end %>
-                <% end %>
-              </div>
+              <% end %>
+            <% end %>
+          </div>
 
         <% end %>
 
         <%= yield %>
 
         <footer class="row">
-          <div class="large-12 columns">
-            <hr/>
-            <div class="row">
-              <div class="large-6 columns">
-                <p>© Copyright no one at all. Go to town.</p>
-              </div>
-              <div class="large-6 columns">
-              </div>
+        <div class="large-12 columns">
+          <hr/>
+          <div class="row">
+            <div class="large-6 columns">
+              <p>© Copyright no one at all. Go to town.</p>
+            </div>
+            <div class="large-6 columns">
             </div>
           </div>
+        </div>
         </footer>
-  </div>
-</div>
-</body>
+      </div>
+    </div>
+  </body>
 </html>

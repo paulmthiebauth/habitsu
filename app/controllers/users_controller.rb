@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-
-  def index
-  end
+  before_action :authenticate_user!, only: :show
 
   def new
     @user = User.new
@@ -11,20 +9,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @plans = @user.plans
     @task = Task.new
-    @tasks = Task.where(user_id: params[:id])
-    @date = @user.current
+      if params[:q].nil?
+        @current_page = 0
+      else
+      @current_page = params[:q].to_i
+      end
+    @tasks = TaskManager.new(@user, @current_page).organized_tasks
   end
-
-  def yesterday
-    # params["day"] = "Yesterday"
-    # redirect_to user_path(params[:id])
-  end
-
-  def edit
-  end
-
-  def destroy
-  end
-
 
 end

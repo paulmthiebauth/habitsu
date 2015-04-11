@@ -192,8 +192,8 @@ div .row {
   border: 1px solid #e8e8e8;
   border-radius: 4px;
   padding: 3px;
-  margin-right: 25px;
-  margin-left: 25px;
+  margin-right: 15px;
+  margin-left: 15px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -295,4 +295,22 @@ div .row {
   font-size: 25px;
   margin-top: -25px;
   text-align: center;
+}
+
+.tasksdate {
+  font-size: 20px;
+  padding-top: -10px;
+  max-width: 100% !important;
+  margin-left: 28px;
+  margin-top: 15px;
+
+}
+
+.inline-list {
+  margin: 0 auto 1.0625rem auto;
+  margin-left: -1.375rem;
+  margin-right: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
 }
