@@ -252,8 +252,8 @@ div .row {
 }
 
 .new_task {
-  width: 80%;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .task_label {
@@ -263,6 +263,7 @@ div .row {
 }
 
 .task_submit {
+  position: relative;
 }
 
 .welcome-back {
@@ -301,7 +302,7 @@ div .row {
   font-size: 20px;
   padding-top: -10px;
   max-width: 100% !important;
-  margin-left: 28px;
+  margin-left: 32px;
   margin-top: 15px;
 
 }
@@ -313,4 +314,10 @@ div .row {
   padding: 0;
   list-style: none;
   overflow: hidden;
+}
+
+.habitlist {
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
 }

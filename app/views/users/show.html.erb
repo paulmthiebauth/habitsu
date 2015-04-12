@@ -86,12 +86,29 @@
       </div><br>
       <div>
         <% @plans.each do |plan|%>
-          <div class="planname">
-            <%= plan.plan_name %>
-          </div>
-          <% plan.habits.each do |habit| %>
-            <img src="http://s11.postimg.org/xbooefv27/Star16.png"> <%= habit.name %><br><br>
-          <% end %>
+        <div class="planname">
+        <%= plan.plan_name %>
+        </div>
+        <% if @habits.empty? %>
+        <% else %>
+        <% @habits.each do |habit| %>
+        <% if habit.plan_id == plan.id && habit.date >= Time.zone.now.beginning_of_day %>
+        <% if habit.completed_at.nil? %>
+        <div class="habitlist">
+        <% if @current_page >= 1 %>
+        <%= image_tag("/clockafternoon.png") %> <%= Habit.find(habit.habit_id).name %><br>
+        <% else %>
+        <%= link_to image_tag("/clockafternoon.png"), user_dailyhabit_complete_path(@user, habit), method: :patch %><%= Habit.find(habit.habit_id).name %><br>
+        <% end %>
+        </div>
+        <% else %>
+        <div class="complete-task">
+        <%= image_tag("/completedhabit.png") %> <%= Habit.find(habit.habit_id).name %><br>
+        </div>
+        <% end %>
+        <% end %>
+        <% end %>
+        <% end %>
         <% end %>
       </div>
     </div>

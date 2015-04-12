@@ -16,6 +16,12 @@ Rails.application.routes.draw do
         end
       end
 
+      resources :users do
+        resources :dailyhabits do
+          patch :complete, :incomplete
+        end
+      end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

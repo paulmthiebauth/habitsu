@@ -15,6 +15,8 @@ class UsersController < ApplicationController
       @current_page = params[:q].to_i
       end
     @tasks = TaskManager.new(@user, @current_page).organized_tasks
+    habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
+    @habits = @user.dailyhabits
   end
 
 end

@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :plans, through: :signups
 
   has_many :signups
-
+  has_many :dailyhabits
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
