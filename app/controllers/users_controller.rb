@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: :show
 
+  def update
+    binding.pry
+  end
+
   def new
     @user = User.new
   end
 
   def show
     @user = User.find(params[:id])
+    @users = current_user.id
     @plans = @user.plans
     @task = Task.new
       if params[:q].nil?
