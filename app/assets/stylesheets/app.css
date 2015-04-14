@@ -263,7 +263,7 @@ div .row {
 }
 
 .task_submit {
-  position: relative;
+  text-align: center;
 }
 
 .welcome-back {
@@ -320,6 +320,8 @@ div .row {
   margin-bottom: 10px;
   border-radius: 4px;
   padding: 5px;
+  display: inline-block;
+  top: 50%;
 }
 
 .habitsulogo {
@@ -338,6 +340,58 @@ div .row {
   display: none;
 }
 
-.glyphicon-complete {
+.buttonToComplete {
   background:url(/clockafternoon.PNG) no-repeat;
+  border: none;
+  height: 17px;
+  width: 16px;
+  display: inline-block;
+  top: 50%;
+  vertical-align: middle;
+  outline:none;
 }
+
+.buttonTo input {
+}
+
+.habitname {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  position: relative;
+
+}
+
+.button_to form {
+  display: inline-block;
+  top: 50%;
+}
+
+.button_to {
+  display: inline-block;
+  top: 50%;
+}
+
+.buttonToIncomplete {
+  background:url(/completedhabit.PNG) no-repeat;
+  border: none;
+  height: 17px;
+  width: 16px;
+  display: inline-block;
+  top: 50%;
+  vertical-align: middle;
+  outline:none;
+}
+
+.tasksubmit {
+  align: center;
+}
+
+/* input[type="submit"]
+{
+  background:url(/completedhabit.png);
+  outline:none;
+  border: none;
+  height: 25px;
+  width: 16px;
+} */

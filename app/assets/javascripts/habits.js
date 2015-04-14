@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $('[data-habit-button="complete"]').on('submit', function(event) {
-    var selected_habit_id = $('#11').attr('habit_name');
     event.preventDefault();
      $form = $(event.currentTarget);
      $.ajax({

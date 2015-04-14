@@ -47,7 +47,7 @@
             <div class="task_name">
               <%= f.text_field :name, size: 10%>
               <div class="task_submit">
-                <%= f.submit %>
+                <%= f.submit "+" %>
               </div>
             </div>
           <% end %>
@@ -94,25 +94,30 @@
 
 <div id="habit-<%= habit.id %>-complete">
 <div class="habitlist">
-<% random_name = Habit.find(habit.habit_id).name %>
-<%= button_to "Complete", user_dailyhabit_path(@user, habit), id: habit.habit_id, habit_name: random_name, method: :patch, form: { data: {'habit-button' => 'complete'}} %> <%= Habit.find(habit.habit_id).name %>
+<%= button_to "", user_dailyhabit_path(@user, habit), id: habit.habit_id, method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
+</div>
+<div class="habitname">
+<%= Habit.find(habit.habit_id).name %>
 </div>
 </div>
 <div id="habit-<%=habit.id %>-incomplete" class="hidden">
 <div class="complete-task">
-<%= button_to "Incomplete", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'incomplete'}} %> <%= Habit.find(habit.habit_id).name %>
+<%= button_to "", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'incomplete'}}, :class => "buttonToIncomplete" %>
+<%= Habit.find(habit.habit_id).name %>
 </div>
 </div>
 <% else %>
 <div id="habit-<%=habit.id %>-incomplete">
 <div class="complete-task">
-<%= button_to "Incomplete", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'incomplete'}} %> <%= Habit.find(habit.habit_id).name %>
+<%= button_to "", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'incomplete'}}, :class => "buttonToIncomplete" %>
+<%= Habit.find(habit.habit_id).name %>
 </div>
 </div>
 <div id="habit-<%= habit.id %>-complete" class="hidden">
 <div class="habitlist">
 <% random_name = Habit.find(habit.habit_id).name %>
-<%= button_to "Complete", user_dailyhabit_path(@user, habit), id: habit.habit_id, habit_name: random_name, method: :patch, form: { data: {'habit-button' => 'complete'}} %> <%= Habit.find(habit.habit_id).name %>
+<%= button_to "", user_dailyhabit_path(@user, habit), id: habit.habit_id, habit_name: random_name, method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
+<%= Habit.find(habit.habit_id).name %>
 </div>
 </div>
                     <% end %>
