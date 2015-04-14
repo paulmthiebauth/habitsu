@@ -333,3 +333,11 @@ div .row {
   margin-bottom: 5px;
   margin-top: 5px;
 }
+
+.hidden {
+  display: none;
+}
+
+.glyphicon-complete {
+  background:url(/clockafternoon.PNG) no-repeat;
+}
