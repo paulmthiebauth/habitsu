@@ -14,17 +14,7 @@ $(document).ready(function() {
 
         action = '/users/' + result.user_id + '/dailyhabits/' + result.id;
         var random = "#habit" + result.id
-            $newForm = $('<form>').attr({
-              action: action,
-              method: 'PATCH',
-              'data-habit-button': 'incomplete'
-            });
 
-            $incompleteButton = $('<input>').attr({type: 'submit', value: 'Incomplete'});
-
-            $newForm.append($incompleteButton);
-
-            var whatever = $(random)[0];
             $(random).replaceWith('<div class="complete-task"> COMPLETE! </div>');
 
             // $(random).replaceWith('<div class="complete-task"> COMPLETE! </div>');

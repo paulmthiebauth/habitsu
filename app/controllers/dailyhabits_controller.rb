@@ -1,6 +1,5 @@
 class DailyhabitsController < ApplicationController
   respond_to :html, :json
-
   def update
     habit = current_user.dailyhabits.find(params[:id])
     if habit.completed_at.nil?
@@ -22,5 +21,4 @@ class DailyhabitsController < ApplicationController
      end
     end
   end
-
 end
