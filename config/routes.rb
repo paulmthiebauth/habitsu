@@ -16,7 +16,7 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :users do
+      resources :users, only: [:edit] do
         resources :dailyhabits do
           patch :complete, :incomplete
         end

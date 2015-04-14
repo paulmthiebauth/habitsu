@@ -1,10 +1,21 @@
 <div class="welcome-back">
-  Welcome back, <%= current_user.first_name %>
+  <% if signed_in? %>
+    Welcome back, <%= current_user.first_name %>
 </div>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="/js/welcome.js"></script>
+<script src="/js/welcome-today.js"></script>
+<script src="/js/themes/grid-light.js"></script>
 
 
-<div  id="welcome"></div>
+
+<div class="row">
+  <div class="large-6 columns">
+    <div id="welcome-yesterday"></div>
+  </div>
+  <div class="large-6 columns">
+    <div id="welcome-today"></div>
+  </div>
+<% end %>
+</div>

@@ -149,7 +149,7 @@ body .row .row {
 
 .nav {
   font-family: 'Quicksand', sans-serif; font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border-bottom: 1px solid #e8e8e8;
 }
 
@@ -320,4 +320,16 @@ div .row {
   margin-bottom: 10px;
   border-radius: 4px;
   padding: 5px;
+}
+
+.habitsulogo {
+  height: 36px;
+  width: 36px;
+}
+
+.flashnotice {
+  text-align: center;
+  height: 24px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }

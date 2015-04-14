@@ -3,9 +3,9 @@
 <script src="/js/chart.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
+<%= csrf_meta_tags %>
 
 <div class="row">
-
 
   <div class="large-4 columns">
     <div class="stats">
@@ -24,92 +24,92 @@
     </div>
   </div>
 
-
   <div class="large-4 columns">
     <div class="todo">
-          <h3>To Do List</h3>
-          <div class="tasksdate">
-          <ul class="inline-list">
+      <h3>To Do List</h3>
+      <div class="tasksdate">
+        <ul class="inline-list">
           <li><div class="navbutton"><%= link_to image_tag("/leftarrow.png"), user_path(current_user, q: @current_page += 1 ) %></div></li>
           <% @current_page -= 1 %>
           <li><%= (@current_page).days.ago.strftime('%a %B %e, %Y') %></li>
 
           <% if @current_page >= 1 %>
-          <li><div class="navbutton"><%= link_to image_tag("/rightarrow.png"), user_path(current_user, q: @current_page -= 1 ) %></div></li>
-          <% @current_page += 1 %>
+            <li><div class="navbutton"><%= link_to image_tag("/rightarrow.png"), user_path(current_user, q: @current_page -= 1 ) %></div></li>
+            <% @current_page += 1 %>
           <% end %>
-          </ul>
-        </div>
+        </ul>
+      </div>
 
-        <% if @current_page == 0 %>
-          <div class="new-task">
+      <% if @current_page == 0 %>
+        <div class="new-task">
 
-            <%= form_for [@user, @task] do |f| %>
-              <div class="task_label">
-                <%= f.label :name, '+' %>
+          <%= form_for [@user, @task] do |f| %>
+            <div class="task_name">
+              <%= f.text_field :name, size: 10%>
+              <div class="task_submit">
+                <%= f.submit %>
               </div>
-              <div class="task_name">
-                <%= f.text_field :name, size: 10%>
-                <div class="task_submit">
-                  <%= f.submit %>
-                </div>
-              </div>
-              <% end %>
             </div>
-            <% end %>
-
-
-            <div class="tasks">
-            <% @tasks.each do |task|%>
-              <% if task.completed_at.nil? %>
-                <% if Time.now - task.created_at > 800 %>
-                  <%= task.name %><br>
-                  <img src="http://s9.postimg.org/ddnnijb97/reminder16.png"  height="18px" width="18px"> : <%= link_to "Complete", complete_task_path(task.id), method: :patch%><br><br>
-                <% else %>
-                  <%= task.name %><br><%= link_to "Complete", complete_task_path(task.id), method: :patch %><br><br>
-                <% end %>
-              <% else %>
-                <div class="complete-task">
-                  <%= task.name %><br>
-                  <%= link_to image_tag("/check16.png"), incomplete_task_path(task.id), method: :patch, data: { confirm: "Mark this task as incomplete?" }%>: <%= task.created_at.strftime('%A %B %e, %Y') %><br>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
+          <% end %>
         </div>
+      <% end %>
+
+      <div class="tasks">
+        <% @tasks.each do |task|%>
+          <% if task.completed_at.nil? %>
+            <% if Time.now - task.created_at > 800 %>
+              <%= task.name %><br>
+              <img src="http://s9.postimg.org/ddnnijb97/reminder16.png"  height="18px" width="18px"> : <%= link_to "Complete", complete_task_path(task.id), method: :patch%><br><br>
+            <% else %>
+              <%= task.name %><br><%= link_to "Complete", complete_task_path(task.id), method: :patch %><br><br>
+            <% end %>
+          <% else %>
+            <div class="complete-task">
+              <%= task.name %><br>
+              <%= link_to image_tag("/check16.png"), incomplete_task_path(task.id), method: :patch, data: { confirm: "Mark this task as incomplete?" }%>: <%= task.created_at.strftime('%A %B %e, %Y') %><br>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
+  </div>
 
   <div class="large-4 columns">
     <div class="habit">
       <div>
         <h3>Habit Checklist</h3>
       </div><br>
-      <div>
-        <% @plans.each do |plan|%>
-        <div class="planname">
-        <%= plan.plan_name %>
-        </div>
-        <% if @habits.empty? %>
-        <% else %>
-        <% @habits.each do |habit| %>
-        <% if habit.plan_id == plan.id && habit.date >= Time.zone.now.beginning_of_day %>
-        <% if habit.completed_at.nil? %>
-        <div class="habitlist">
-        <% if @current_page >= 1 %>
-        <%= image_tag("/clockafternoon.png") %> <%= Habit.find(habit.habit_id).name %><br>
-        <% else %>
-        <%= link_to image_tag("/clockafternoon.png"), user_dailyhabit_complete_path(@user, habit), method: :patch %><%= Habit.find(habit.habit_id).name %><br>
-        <% end %>
-        </div>
-        <% else %>
-        <div class="complete-task">
-        <%= image_tag("/completedhabit.png") %> <%= Habit.find(habit.habit_id).name %><br>
-        </div>
+      <div id="habitlist2">
+        <div>
+          <% @plans.each do |plan|%>
+            <div class="planname">
+              <%= plan.plan_name %>
+            </div>
+            <% if @habits.empty? %>
+            <% else %>
+              <% @habits.each do |habit| %>
+                <div id="habit<%= habit.id %>">
+                  <% if habit.plan_id == plan.id && habit.date >= Time.zone.now.beginning_of_day %>
+                    <% if habit.completed_at.nil? %>
+                      <div class="habitlist">
+                        <% if @current_page >= 1 %>
+                          <%= image_tag("/clockafternoon.png") %> <%= Habit.find(habit.habit_id).name %><br>
+                        <% else %>
+                          <% random_name = Habit.find(habit.habit_id).name %>
+                          <%= button_to "Complete", user_dailyhabit_path(@user, habit), id: habit.habit_id, habit_name: random_name, method: :patch, form: { data: {'habit-button' => 'complete'}} %> <%= Habit.find(habit.habit_id).name %>
+                        <% end %>
+                      </div>
+                    <% else %>
+                      <div class="complete-task">
+                        <%= button_to "Incomplete", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'incomplete'}} %> <%= Habit.find(habit.habit_id).name %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
           <% end %>
-          <% end %>
-        <% end %>
-        <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
