@@ -1,25 +1,69 @@
-<div class="sign-up">
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Habitsu</title>
+    <link rel="icon" type="png" href="http://s18.postimg.org/5vo9ex7px/habitsu_logo.png">
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="nav">
+          <div class="row">
+
+
+
+            <div class="large-3 columns">
+              <div class="navleft">
+                <ul class="inline-list">
+                  <li><div class="navbutton"><%= link_to image_tag("/home.png"), users_path %></div></li>
+                  <% if signed_in? %>
+                  <li><div class="navbutton"><%= link_to image_tag("/USER-1.png"), user_path(current_user) %></div></li>
+                  <% end %>
+                </ul>
+
+              </div>
+            </div>
+            <div class="large-9 columns">
+              <div class="navright">
+                <ul class="inline-list right">
+
+                  <% if signed_in? %>
+                    <li><div class="navbutton"><%= link_to image_tag("/checklist.png"), users_path %></div></li>
+                    <li><div class="navbutton"><%= link_to image_tag("/OPTIONS-1.png"), edit_user_registration_path %></div></li>
+                    <li><div class="navbutton"><%= link_to image_tag("/LOGOUT-1.png"), destroy_user_session_path, :method => :delete %></div></li>
+                  <% else %>
+                    <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                    <li><%= link_to "Sign In", new_user_session_path %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="field2" >
     <%= f.label :first_name, "First Name" %><br />
     <%= f.text_field :first_name, autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="field2">
     <%= f.label :last_name, "Last Name" %><br />
     <%= f.text_field :last_name %>
   </div>
 
-  <div class="field">
+  <div class="field2">
     <%= f.label :email %><br />
     <%= f.email_field :email %>
   </div>
 
-  <div class="field">
+  <div class="field2">
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -27,7 +71,7 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="field2">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div><br />
@@ -36,4 +80,8 @@
     <%= f.submit "Sign up" %>
   </div><br />
 <% end %>
+
 </div>
+</div>
+</body>
+</html>

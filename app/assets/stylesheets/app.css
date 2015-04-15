@@ -260,6 +260,8 @@ div .row {
 }
 
 .task_name {
+  width: 100%;
+  display: inline-block;
 }
 
 .task_submit {
@@ -387,11 +389,36 @@ div .row {
   align: center;
 }
 
-/* input[type="submit"]
+.task_list_submit
 {
-  background:url(/completedhabit.png);
+  background:url(/plus.png);
   outline:none;
   border: none;
-  height: 25px;
-  width: 16px;
-} */
+  height: 23px;
+  width: 23.3px;
+}
+
+.field2 {
+  padding-top: 20px;
+  width: 50%;
+}
+
+.user_first_name {
+  width: 50%;
+}
+
+.mainquote {
+  font-style: italic;
+  padding-left: 30px;
+  padding-bottom: 15px;
+  font-size: 18px;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+.userindex {
+  padding-bottom: 20px;
+}
+
+.footer {
+  padding-left: 30px;
+}

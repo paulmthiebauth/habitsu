@@ -41,17 +41,15 @@
       </div>
 
       <% if @current_page == 0 %>
-        <div class="new-task">
-
           <%= form_for [@user, @task] do |f| %>
             <div class="task_name">
               <%= f.text_field :name, size: 10%>
-              <div class="task_submit">
-                <%= f.submit "+" %>
-              </div>
             </div>
+              <div class="task_submit">
+                <%= f.submit "", :class => 'task_list_submit' %>
+              </div>
+
           <% end %>
-        </div>
       <% end %>
 
       <div class="tasks">
@@ -59,7 +57,7 @@
           <% if task.completed_at.nil? %>
             <% if Time.now - task.created_at > 800 %>
               <%= task.name %><br>
-              <img src="http://s9.postimg.org/ddnnijb97/reminder16.png"  height="18px" width="18px"> : <%= link_to "Complete", complete_task_path(task.id), method: :patch%><br><br>
+              <%= link_to "Complete", complete_task_path(task.id), method: :patch%><br><br>
             <% else %>
               <%= task.name %><br><%= link_to "Complete", complete_task_path(task.id), method: :patch %><br><br>
             <% end %>

@@ -17,7 +17,7 @@ $(document).ready(function() {
 
             // $(random).replaceWith('<div class="complete-task"> COMPLETE! </div>');
             $(complete_div).toggle();
-            $(incomplete_div).toggle();
+            $(incomplete_div).fadeToggle();
 
             // $(random).replaceWith('<div class="complete-task"> COMPLETE! </div>');
         // $("#habitlist2").load('/users/1.html #habitlist2');
@@ -44,7 +44,7 @@ $(document).ready(function() {
         var complete_div = "#habit-" + result.id + "-complete"
         var incomplete_div = "#habit-" + result.id + "-incomplete"
             $(incomplete_div).toggle();
-            $(complete_div).toggle();
+            $(complete_div).fadeToggle();
       }
     });
    });
