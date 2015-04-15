@@ -1,0 +1,28 @@
+<div class="row">
+
+  <div class="large-6 columns">
+    <% @habits.each do |habit| %>
+    <% if habit.streak_count == 0 %>
+        <div class="habit-stats-list-light-green">
+        <%= Habit.find(habit.habit_id).name %><br>
+        Current Streak: <%= habit.streak_count %>
+        </div>
+    <% elsif habit.streak_count >= 1 && habit.streak_count < 5 %>
+    <div class="habit-stats-list-medium-green">
+    <%= Habit.find(habit.habit_id).name %><br>
+    Current Streak: <%= habit.streak_count %>
+    </div>
+    <% elsif habit.streak_count >= 5 && habit.streak_count < 10 %>
+    <div class="habit-stats-list-dark-green">
+    <%= Habit.find(habit.habit_id).name %><br>
+    Current Streak: <%= habit.streak_count %>
+    </div>
+    <% end %>
+    <% end %>
+    </div>
+
+  <div class="large-6 columns">
+
+  </div>
+
+  </div

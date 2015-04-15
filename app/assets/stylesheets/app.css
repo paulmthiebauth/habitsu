@@ -233,7 +233,7 @@ div .row {
   padding: 7.5px;
   padding-bottom: 25px;
   font-style: italic;
-  padding-left: 8px;
+  padding-left: 20px;
   font-size: 18px;
   font-family: 'Quicksand', sans-serif; font-weight: 400;
 }
@@ -421,4 +421,35 @@ div .row {
 
 .footer {
   padding-left: 30px;
+}
+
+.welcome-back-header {
+  padding-bottom: 30px;
+}
+
+.incomplete-task {
+  margin-bottom: 20px;
+  margin-top: -20px;
+  padding-left: 5px;
+}
+
+.habit-stats-list-light-green {
+  background-color: #E0FFD1;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.habit-stats-list-medium-green {
+  background-color: #E0FFD1;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.habit-stats-list-dark-green {
+  background-color: #B4FF8F;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
 }

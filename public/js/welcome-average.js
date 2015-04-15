@@ -1,14 +1,14 @@
 $(function () {
-    $('#welcome-today').highcharts({
+    $('#welcome-average').highcharts({
         chart: {
             type: 'pie'
         },
         title: {
-            text: 'Todays Score'
+            text: 'Average Score'
         },
         yAxis: {
             title: {
-                text: 'Todays Score'
+                text: 'Average Score'
             }
         },
         series: [{
@@ -16,11 +16,11 @@ $(function () {
             data: [
               {
                     name: 'Completed',
-                    y: 82,
+                    y: 87,
                     sliced: true,
-                    selected: true
+
                 },
-              ['Incomplete', 18]
+              ['Incomplete', 13]
             ]
         }]
     });

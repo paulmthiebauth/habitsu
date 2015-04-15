@@ -32,7 +32,7 @@
                 <ul class="inline-list right">
 
                   <% if signed_in? %>
-                    <li><div class="navbutton"><%= link_to image_tag("/checklist.png"), users_path %></div></li>
+                    <li><div class="navbutton"><%= link_to image_tag("/checklist.png"), user_stats_path(current_user) %></div></li>
                     <li><div class="navbutton"><%= link_to image_tag("/OPTIONS-1.png"), edit_user_registration_path %></div></li>
                     <li><div class="navbutton"><%= link_to image_tag("/LOGOUT-1.png"), destroy_user_session_path, :method => :delete %></div></li>
                   <% else %>

@@ -4,11 +4,11 @@ $(function () {
             type: 'pie'
         },
         title: {
-            text: 'Yesterdays Total'
+            text: 'Yesterdays Score'
         },
         yAxis: {
             title: {
-                text: 'Yesterdays Total'
+                text: 'Yesterdays Score'
             }
         },
         series: [{
@@ -16,11 +16,11 @@ $(function () {
             data: [
               {
                     name: 'Completed',
-                    y: 81,
+                    y: 21,
                     sliced: true,
                     selected: true
                 },
-              ['Incomplete', 19]
+              ['Incomplete', 79]
             ]
         }]
     });

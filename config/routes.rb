@@ -3,6 +3,10 @@ Rails.application.routes.draw do
       devise_for :users
 
       resources :users do
+        resources :stats, only: [:index]
+      end
+
+      resources :users do
         member do
           get 'current'
           get 'yesterday'

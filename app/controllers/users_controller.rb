@@ -20,9 +20,8 @@ class UsersController < ApplicationController
       @current_page = params[:q].to_i
       end
     @tasks = TaskManager.new(@user, @current_page).organized_tasks
-    habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
-    @habits = @user.dailyhabits
-
+    @habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
+    @date = @current_page.days.ago
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @user.to_json(methods: :completion_data) }

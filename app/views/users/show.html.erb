@@ -12,7 +12,7 @@
       <div class="quote">
         <h3>Todays Mantra</h3>
         <br>
-        Help others achieve their dreams and you will achieve yours.<br>
+        "Help others achieve their dreams and you will achieve yours."<br>
         -Les Brown
       </div>
       <div class="graph">
@@ -55,16 +55,12 @@
       <div class="tasks">
         <% @tasks.each do |task|%>
           <% if task.completed_at.nil? %>
-            <% if Time.now - task.created_at > 800 %>
-              <%= task.name %><br>
-              <%= link_to "Complete", complete_task_path(task.id), method: :patch%><br><br>
-            <% else %>
-              <%= task.name %><br><%= link_to "Complete", complete_task_path(task.id), method: :patch %><br><br>
-            <% end %>
+          <div class = "incomplete-task">
+            <br><%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), method: :patch %> <%= task.name %>
+          </div>
           <% else %>
             <div class="complete-task">
-              <%= task.name %><br>
-              <%= link_to image_tag("/check16.png"), incomplete_task_path(task.id), method: :patch, data: { confirm: "Mark this task as incomplete?" }%>: <%= task.created_at.strftime('%A %B %e, %Y') %><br>
+              <%= link_to image_tag("/completedcircle.png"), incomplete_task_path(task.id), method: :patch, data: { confirm: "Mark this task as incomplete?" }%> <%= task.name %> <br>
             </div>
           <% end %>
         <% end %>
@@ -87,7 +83,7 @@
             <% else %>
               <% @habits.each do |habit| %>
               <!-- <div class="habitlist"> -->
-                  <% if habit.plan_id == plan.id && habit.date >= Time.zone.now.beginning_of_day %>
+                  <% if habit.plan_id == plan.id && habit.date >= @date.beginning_of_day %>
                     <% if habit.completed_at.nil? %>
 
 <div id="habit-<%= habit.id %>-complete">
@@ -95,27 +91,31 @@
 <%= button_to "", user_dailyhabit_path(@user, habit), id: habit.habit_id, method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
 </div>
 <div class="habitname">
-<%= Habit.find(habit.habit_id).name %>
+<%= Habit.find(habit.habit_id).name %><br>
+Current Streak : <%= habit.streak_count %>
 </div>
 </div>
 <div id="habit-<%=habit.id %>-incomplete" class="hidden">
 <div class="complete-task">
 <%= button_to "", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'incomplete'}}, :class => "buttonToIncomplete" %>
-<%= Habit.find(habit.habit_id).name %>
+<%= Habit.find(habit.habit_id).name %><br>
+Current Streak : <%= habit.streak_count %>
 </div>
 </div>
 <% else %>
 <div id="habit-<%=habit.id %>-incomplete">
 <div class="complete-task">
 <%= button_to "", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'incomplete'}}, :class => "buttonToIncomplete" %>
-<%= Habit.find(habit.habit_id).name %>
+<%= Habit.find(habit.habit_id).name %><br>
+Current Streak : <%= habit.streak_count %>
 </div>
 </div>
 <div id="habit-<%= habit.id %>-complete" class="hidden">
 <div class="habitlist">
 <% random_name = Habit.find(habit.habit_id).name %>
 <%= button_to "", user_dailyhabit_path(@user, habit), id: habit.habit_id, habit_name: random_name, method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
-<%= Habit.find(habit.habit_id).name %>
+<%= Habit.find(habit.habit_id).name %><br>
+Current Streak : <%= habit.streak_count %>
 </div>
 </div>
                     <% end %>
