@@ -17,6 +17,11 @@
     <%= Habit.find(habit.habit_id).name %><br>
     Current Streak: <%= habit.streak_count %>
     </div>
+    <% elsif habit.streak_count > 10 %>
+    <div class="habit-stats-list-darker-green">
+      <%= Habit.find(habit.habit_id).name %><br>
+      Current Streak: <%= habit.streak_count %>
+    </div>
     <% end %>
     <% end %>
     </div>

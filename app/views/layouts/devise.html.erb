@@ -1,25 +1,21 @@
 <body>
-<div class="container">
-
-  <% if flash.any? %>
-
-    <div class="flash">
-      <div class="container">
+  <div class="container">
+    <% if flash.any? %>
+      <div class="flash">
+        <div class="container">
           <% if alert != nil %>
-          <%= alert %>
+            <%= alert %>
           <% elsif notice.is_a? String %>
-          <%= notice %>
+            <%= notice %>
           <% elsif notice.size == 1 %>
             <%= notice.first %>
           <% else %>
             <% flash[:notice].each do |flash| %>
-            <%= flash %><br />
+              <%= flash %><br />
             <% end %>
-            <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
-
-<%= yield %>
-
+    <% end %>
+  <%= yield %>
 </body>

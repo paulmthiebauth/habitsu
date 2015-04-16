@@ -343,7 +343,7 @@ div .row {
 }
 
 .buttonToComplete {
-  background:url(/clockafternoon.PNG) no-repeat;
+  background:url(/pendingcircle.PNG) no-repeat;
   border: none;
   height: 17px;
   width: 16px;
@@ -375,7 +375,7 @@ div .row {
 }
 
 .buttonToIncomplete {
-  background:url(/completedhabit.PNG) no-repeat;
+  background:url(/completedcircle.PNG) no-repeat;
   border: none;
   height: 17px;
   width: 16px;
@@ -434,7 +434,6 @@ div .row {
 }
 
 .habit-stats-list-light-green {
-  background-color: #E0FFD1;
   margin-bottom: 10px;
   border-radius: 4px;
   padding: 5px;
@@ -449,6 +448,13 @@ div .row {
 
 .habit-stats-list-dark-green {
   background-color: #B4FF8F;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.habit-stats-list-darker-green {
+  background-color: #66FF33;
   margin-bottom: 10px;
   border-radius: 4px;
   padding: 5px;
