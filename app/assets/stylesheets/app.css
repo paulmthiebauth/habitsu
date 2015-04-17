@@ -149,8 +149,8 @@ body .row .row {
 
 .nav {
   font-family: 'Quicksand', sans-serif; font-weight: 400;
-  margin-bottom: 5px;
-  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 2px;
+  border-bottom: 1px dashed #e8e8e8;
 }
 
 .navright {
@@ -252,7 +252,7 @@ div .row {
 }
 
 .new_task {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   position: relative;
 }
 
@@ -260,12 +260,21 @@ div .row {
 }
 
 .task_name {
-  width: 100%;
+  width: 90%;
   display: inline-block;
+  margin-top: 5px;
+  text-align: center;
+  padding-left: 25px;
 }
 
 .task_submit {
-  text-align: center;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  left: -33px;
+  top: 5px;
+  background-color: 'white';
 }
 
 .welcome-back {
@@ -353,7 +362,8 @@ div .row {
   outline:none;
 }
 
-.buttonTo input {
+.taskname input {
+  margin-bottom: -20px;
 }
 
 .habitname {
@@ -392,6 +402,7 @@ div .row {
 .task_list_submit
 {
   background:url(/plus.png);
+  background-color: 'white;'
   outline:none;
   border: none;
   height: 23px;
@@ -458,4 +469,12 @@ div .row {
   margin-bottom: 10px;
   border-radius: 4px;
   padding: 5px;
+}
+
+.inline-list ul {
+  margin-bottom: -5px;
+}
+
+.task-creation {
+  margin-bottom: 12px;
 }

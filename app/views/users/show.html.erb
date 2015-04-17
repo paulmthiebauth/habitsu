@@ -27,6 +27,7 @@
   <div class="large-4 columns">
     <div class="todo">
       <h3>To Do List</h3>
+      <div class="task-creation">
       <div class="tasksdate">
         <ul class="inline-list">
           <li><div class="navbutton"><%= link_to image_tag("/leftarrow.png"), user_path(current_user, q: @current_page += 1 ) %></div></li>
@@ -39,6 +40,7 @@
           <% end %>
         </ul>
       </div>
+    </div>
 
       <% if @current_page == 0 %>
         <%= form_for [@user, @task] do |f| %>
@@ -48,9 +50,9 @@
           <div class="task_submit">
             <%= f.submit "", :class => 'task_list_submit' %>
           </div>
-
         <% end %>
       <% end %>
+
 
       <div class="tasks">
         <% @tasks.each do |task|%>
