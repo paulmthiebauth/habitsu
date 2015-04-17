@@ -9,7 +9,7 @@ class TaskManager
       date = @num_days_ago.days.ago
       @user.tasks.where(created_at: (date.beginning_of_day..date.end_of_day))
     else
-      @user.tasks.where("created_at >= ?", Time.zone.now.beginning_of_day)
+      @user.tasks.where("created_at >= ?", DateTime.now.beginning_of_day)
     end
   end
 end

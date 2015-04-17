@@ -33,9 +33,8 @@ class User < ActiveRecord::Base
     @todays_date = @todays_date.tomorrow
   end
 
-  def completion_data
-    stuff = 1
-    { "monday" => stuff, "tuesday" => 1, "wednesday" => 5 }
+  def self.weekly_completion_data(scores)
+    scores
   end
 
 end

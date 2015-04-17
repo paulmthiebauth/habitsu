@@ -15,12 +15,8 @@ $(document).ready(function() {
         var complete_div = "#habit-" + result.id + "-complete"
         var incomplete_div = "#habit-" + result.id + "-incomplete"
 
-            // $(random).replaceWith('<div class="complete-task"> COMPLETE! </div>');
             $(complete_div).toggle();
             $(incomplete_div).fadeToggle();
-
-            // $(random).replaceWith('<div class="complete-task"> COMPLETE! </div>');
-        // $("#habitlist2").load('/users/1.html #habitlist2');
       }
     });
    });

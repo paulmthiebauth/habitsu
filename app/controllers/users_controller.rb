@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: :show
 
   def update
-    binding.pry
   end
 
   def new
@@ -21,10 +20,17 @@ class UsersController < ApplicationController
       end
     @tasks = TaskManager.new(@user, @current_page).organized_tasks
     @habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
+
+
+    @todays_score = ScoreManager.new(@user, @habits, @current_page).daily_scores
+    @weekly_scores = ScoreManager.new(@user, @habits, @current_page).weekly_scores
+    @user_score = User.weekly_completion_data(@weekly_scores)
+    {:user_score => @user_score}.to_json
     @date = @current_page.days.ago
+
     respond_to do |format|
       format.html { render :show }
-      format.json { render json: @user.to_json(methods: :completion_data) }
+      format.json { render json: @user_score.to_json}
     end
   end
 
