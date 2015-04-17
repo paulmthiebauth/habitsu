@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @user_score.to_json}
+      
     end
   end
 
