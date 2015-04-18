@@ -485,3 +485,8 @@ div .row {
 .task-creation {
   margin-bottom: 12px;
 }
+
+.legend {
+  margin-top: 25px;
+  text-align: center;
+}

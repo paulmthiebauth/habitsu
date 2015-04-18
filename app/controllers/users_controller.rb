@@ -3,8 +3,16 @@ class UsersController < ApplicationController
 
   def index
   @user = current_user
-  @habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
-  @homepage_scores = PieManager.new(@user, @habits).home_scores
+  @scores = Dailyscore.where(user_id: @user.id)
+  User.weekly_completion_data(@weekly_scores)
+  @homepage_scores = PieManager.new(@user, @scores).home_scores
+
+  respond_to do |format|
+    format.html { render :index }
+    format.json { render json: @homepage_scores.to_json}
+
+  end
+
   end
 
 

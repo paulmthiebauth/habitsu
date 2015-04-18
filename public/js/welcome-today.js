@@ -1,8 +1,23 @@
+var x = location.href;
+var x = x + ".json"
+
+$.getJSON(x, function(datax) {
+
 $(function () {
     $('#welcome-today').highcharts({
         chart: {
             type: 'pie'
         },
+        plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: false
+                }
+            },
         title: {
             text: 'Todays Score'
         },
@@ -16,12 +31,13 @@ $(function () {
             data: [
               {
                     name: 'Completed',
-                    y: 82,
+                    y: datax["Today-Complete"],
                     sliced: true,
                     selected: true
                 },
-              ['Incomplete', 18]
+              ['Incomplete', datax["Today-Incomplete"]]
             ]
         }]
     });
+});
 });
