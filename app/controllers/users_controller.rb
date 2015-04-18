@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def index
   @user = current_user
+  @habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
+  @homepage_scores = PieManager.new(@user, @habits).home_scores
   end
 
 

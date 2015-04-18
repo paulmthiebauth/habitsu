@@ -1,8 +1,6 @@
+
 var x = location.href;
 var x = x + ".json"
-debugger;
-
-
 
 $.getJSON(x, function(datax) {
           $(function () {
@@ -14,17 +12,20 @@ $.getJSON(x, function(datax) {
                       text: 'Daily Points'
                   },
                   xAxis: {
-                      categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+                      categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
                   },
                   yAxis: {
+                      max: 100,
                       title: {
                           text: 'Points Earned'
                       }
                   },
                   series: [{
-                      name: 'Paul',
-                      data: datax
+                      showInLegend: false,
+                      name: "",
+                      data: [datax["Monday"], datax["Tuesday"], datax["Wednesday"], datax["Thursday"], datax["Friday"], datax["Saturday"], datax["Sunday"]]
                   }]
+
               });
           });
 });
