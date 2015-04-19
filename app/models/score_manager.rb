@@ -13,7 +13,6 @@ class ScoreManager
     date = DateTime.now
     end
     weekday = date.strftime('%A')
-    Dailyscore.where(user_id: @user.id).where(date: (date.beginning_of_day)..date.end_of_day).first.weekday == "Sunday"
     #########SET AND CALCULATE TODAYS SCORE
     if Dailyscore.where(user_id: @user.id).where(date: (date.beginning_of_day)..date.end_of_day).empty?
       Dailyscore.create(user_id: @user.id, date: date, weekday: weekday, total_score: 0)
@@ -28,12 +27,12 @@ class ScoreManager
 
   def weekly_scores
     weekly_score_hash = {}
-    date = 0.days.ago.localtime
+    date = @num_days_ago.days.ago.localtime
     # weekly_score_hash["user"] = @user.id
     if DateTime.now.strftime('%u') == 1
       weekly_score_hash["Monday"] = Dailyscore.where(user_id: @user.id).where(date: (date.beginning_of_day)..date.end_of_day).first.total_score
     else
-      count = 0
+      count = @num_days_ago
       date = count.days.ago.localtime
       until Dailyscore.where(user_id: @user.id).where(date: (date.beginning_of_day)..date.end_of_day).first.nil? || Dailyscore.where(user_id: @user.id).where(date: (date.beginning_of_day)..date.end_of_day).first.weekday == "Sunday"
         day = Dailyscore.where(user_id: @user.id).where(date: (date.beginning_of_day)..date.end_of_day).first.weekday
@@ -44,5 +43,4 @@ class ScoreManager
     end
     weekly_score_hash
   end
-
 end

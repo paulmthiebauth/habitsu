@@ -1,4 +1,3 @@
-
 var x = location.href;
 var x = x + ".json"
 
@@ -22,8 +21,8 @@ $.getJSON(x, function(datax) {
                   },
                   series: [{
                       showInLegend: false,
-                      name: "",
-                      data: [datax["Monday"], datax["Tuesday"], datax["Wednesday"], datax["Thursday"], datax["Friday"], datax["Saturday"], datax["Sunday"]]
+                      name: "Points",
+                      data: [datax["Monday"], datax["Tuesday"], datax["Wednesday"], datax["Thursday"], datax["Friday"], datax["Saturday"], datax["Sunday"]],
                   }]
 
               });

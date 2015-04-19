@@ -36,7 +36,6 @@ class UsersController < ApplicationController
     @tasks = TaskManager.new(@user, @current_page).organized_tasks
     @habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
 
-
     @todays_score = ScoreManager.new(@user, @habits, @current_page).daily_scores
     @weekly_scores = ScoreManager.new(@user, @habits, @current_page).weekly_scores
     @user_score = User.weekly_completion_data(@weekly_scores)
