@@ -16,7 +16,7 @@ habit5 = Habit.create(name: "Say 'Thank you' ten times")
 habit6 = Habit.create(name: "Genuinely compliment five people")
 habit7 = Habit.create(name: "Greet people by their first name")
 habit8 = Habit.create(name: "Evening review: To do list")
-habit9 = Habit.craete(name: "Write down what you learned today")
+habit9 = Habit.create(name: "Write down what you learned today")
 habit10 = Habit.create(name: "Pick out tomorrows outfit")
 habit11 = Habit.create(name: "'If I live everyday the same way I did today, what future would that create?'")
 
