@@ -43,6 +43,12 @@ group :development, :test do
   gem 'spring'
 end
 
+
+group :production do
+  gem 'rails_12factor'
+  gem 'rails_serve_static_assets'
+end
+
 gem 'kaminari'
 gem 'rspec-rails', group: [:development, :test]
 gem 'capybara', group: [:development, :test]
@@ -56,5 +62,3 @@ gem 'omniauth-github'
 gem 'pg'
 gem 'rake'
 gem 'image_button_to'
-gem 'rails_12factor'
-gem 'rails_serve_static_assets'
