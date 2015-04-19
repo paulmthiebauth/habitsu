@@ -11,15 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410003841) do
+ActiveRecord::Schema.define(version: 20150417185319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "habits", force: :cascade do |t|
-    t.string   "name",        null: false
-    t.string   "completed",   null: false
+  create_table "dailyhabits", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "habit_id"
     t.integer  "point_value"
+    t.datetime "completed_at"
+    t.datetime "date"
+    t.integer  "plan_id"
+    t.integer  "streak_count", default: 0
+  end
+
+  create_table "dailyscores", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "date"
+    t.string   "weekday"
+    t.integer  "total_score"
+  end
+
+  create_table "habits", force: :cascade do |t|
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

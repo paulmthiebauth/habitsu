@@ -82,6 +82,8 @@ GEM
     hashie (2.1.1)
     hike (1.2.3)
     i18n (0.7.0)
+    image_button_to (0.1.0)
+      actionpack (>= 2.0.0)
     jbuilder (2.2.12)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -132,6 +134,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -233,6 +237,7 @@ DEPENDENCIES
   devise
   factory_girl
   foundation-rails
+  image_button_to
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
@@ -240,6 +245,7 @@ DEPENDENCIES
   omniauth-github
   pg
   pry
+  quiet_assets
   rails (= 4.2.1)
   rake
   rspec-rails

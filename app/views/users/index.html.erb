@@ -1,10 +1,49 @@
-<div class="welcome-back">
-  Welcome back, <%= current_user.first_name %>
-</div>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="/js/welcome.js"></script>
+<script src="/js/welcome-today.js"></script>
+<script src="/js/welcome-average.js"></script>
+<script src="/js/themes/grid-light.js"></script>
 
 
-<div  id="welcome"></div>
+
+
+
+  <% if signed_in? %>
+  <div class="welcome-back">
+    <div class="welcome-back-header">
+    Welcome back, <%= current_user.first_name %>
+    </div>
+
+    <% if @user.plans.empty? %>
+    Please choose a plan to start!
+
+    <% else %>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <div id="welcome-yesterday"></div>
+      </div>
+      <div class="large-4 columns">
+        <div id="welcome-today"></div>
+      </div>
+      <div class="large-4 columns">
+        <div id="welcome-average"></div>
+      </div>
+      <div class="legend">
+        <%= image_tag("/legend.png") %>
+      </div>
+      <% end %>
+
+
+
+    </div>
+  </div>
+    <% else %>
+    <div class="mainquote">
+    "Excellence is an art won by training and habituation.<br>
+    We are what we repeatedly do.<br>
+    Excellence, then, is not an act but a habit."<br>
+    -Aristotle
+  </div>
+    <% end %>

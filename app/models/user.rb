@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :plans, through: :signups
 
   has_many :signups
-
+  has_many :dailyhabits
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
@@ -31,6 +31,10 @@ class User < ActiveRecord::Base
 
   def tomorrow
     @todays_date = @todays_date.tomorrow
+  end
+
+  def self.weekly_completion_data(scores)
+    scores
   end
 
 end
