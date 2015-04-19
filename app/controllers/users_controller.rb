@@ -38,13 +38,13 @@ class UsersController < ApplicationController
 
     @todays_score = ScoreManager.new(@user, @habits, @current_page).daily_scores
     @weekly_scores = ScoreManager.new(@user, @habits, @current_page).weekly_scores
-    @user_score = User.weekly_completion_data(@weekly_scores)
-    {:user_score => @user_score}.to_json
+    # @user_score = User.weekly_completion_data(@weekly_scores)
+    # {:user_score => @user_score}.to_json
     @date = @current_page.days.ago.localtime
 
     respond_to do |format|
       format.html { render :show }
-      format.json { render json: @user_score.to_json}
+      format.json { render json: @weekly_scores.to_json}
 
     end
   end

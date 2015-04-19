@@ -11,7 +11,7 @@ $.getJSON(x, function(datax) {
                       text: 'Daily Points'
                   },
                   xAxis: {
-                      categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                      categories: [ 'Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
                   },
                   yAxis: {
                       max: 100,
@@ -22,7 +22,7 @@ $.getJSON(x, function(datax) {
                   series: [{
                       showInLegend: false,
                       name: "Points",
-                      data: [datax["Monday"], datax["Tuesday"], datax["Wednesday"], datax["Thursday"], datax["Friday"], datax["Saturday"], datax["Sunday"]],
+                      data: [ datax["Sunday"], datax["Monday"], datax["Tuesday"], datax["Wednesday"], datax["Thursday"], datax["Friday"], datax["Saturday"]],
                   }]
 
               });
