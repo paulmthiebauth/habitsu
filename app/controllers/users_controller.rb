@@ -24,8 +24,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @users = current_user.id
+    @user = User.find(current_user)
+    # @users = current_user.id
     @plans = @user.plans
     @task = Task.new
       if params[:q].nil?
@@ -45,8 +45,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @weekly_scores.to_json}
+      end
     end
-  end
 
   def update
     binding.pry
