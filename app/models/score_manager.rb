@@ -49,15 +49,13 @@ class ScoreManager
     count = 0
     date = count.days.ago.localtime
     weekday = date.localtime.strftime('%A')
-    if Dailyscore.where(user_id: @user.id).where(date: (date.localtime.beginning_of_day)..date.localtime.end_of_day).first.total_score.nil?
-      weekly_score_hash[weekday] = 0
-      until count == 6 || Dailyscore.where(user_id: @user.id).where(date: (date.localtime.beginning_of_day)..date.localtime.end_of_day).first.nil?
-        weekly_score_hash[date.localtime.strftime('%A')] = Dailyscore.where(user_id: @user.id).where(date: (date.localtime.beginning_of_day)..date.localtime.end_of_day).first.total_score
+    until count == 7
+      if Dailyscore.where(user_id: @user.id).where(date: (date.localtime.beginning_of_day)..date.localtime.end_of_day).first.nil?
+        Dailyscore.create(user_id: @user.id, date: count.days.ago.localtime, weekday: date.localtime.strftime('%A'), total_score: 0)
+        weekly_score_hash[date.localtime.strftime('%A')] = 0
         count += 1
         date = count.days.ago.localtime
-      end
-    else
-    until count == 7 || Dailyscore.where(user_id: @user.id).where(date: (date.localtime.beginning_of_day)..date.localtime.end_of_day).first.nil?
+      else
       weekly_score_hash[date.localtime.strftime('%A')] = Dailyscore.where(user_id: @user.id).where(date: (date.localtime.beginning_of_day)..date.localtime.end_of_day).first.total_score
       count += 1
       date = count.days.ago.localtime
