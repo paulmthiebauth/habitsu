@@ -1,0 +1,9 @@
+
+Featured Plans:<br>
+<% @plans.each do |plan| %>
+
+<%= plan.plan_name %>
+
+<%= button_to "Sign Up", user_plan_path(@user, plan), id: plan.id, method: :patch %>
+
+<% end %>

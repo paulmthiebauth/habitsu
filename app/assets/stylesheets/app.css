@@ -490,3 +490,11 @@ div .row {
   margin-top: 25px;
   text-align: center;
 }
+
+
+.noplan {
+  background-color: #CEFFB5;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+}

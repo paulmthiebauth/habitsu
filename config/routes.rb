@@ -6,6 +6,14 @@ Rails.application.routes.draw do
         resources :stats, only: [:index]
       end
 
+      resources :plans
+
+      resources :users do
+        resources :plans
+      end
+
+      resources :signups
+
       resources :users do
         member do
           get 'current'

@@ -45,6 +45,22 @@
           </div>
         </div>
 
+        <div class="flashnotice">
+        <% if flash.any? %>
+            <% if alert != nil %>
+              <%= alert %>
+            <% elsif notice.is_a? String %>
+              <%= notice %>
+            <% elsif notice.size == 1 %>
+              <%= notice.first %>
+            <% else %>
+              <% flash[:notice].each do |flash| %>
+                <%= flash %><br />
+              <% end %>
+            <% end %>
+        <% end %>
+      </div>
+
         Log in
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

@@ -22,6 +22,7 @@
                   <li><div class="navbutton"><%= link_to image_tag("/home.png"), users_path %></div></li>
                   <% if signed_in? %>
                   <li><div class="navbutton"><%= link_to image_tag("/USER-1.png"), user_path(current_user) %></div></li>
+                  <li><div class="navbutton"><%= link_to image_tag("/plans.png"), plans_path %></div></li>
                   <% end %>
                 </ul>
 
