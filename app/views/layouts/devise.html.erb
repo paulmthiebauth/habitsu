@@ -1,69 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>RescueMission</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
 <body>
-<div class="container">
-    <nav class="navbar navbar-inverse">
-      <div class="container">
-      <div class="top-bar">
-      <a class="navbar-brand" href="/">Dashboard</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-      <form class="navbar-form navbar-right">
-        <% if signed_in? %>
-        <div class="navbar-form form-group">
-        <a href="/questions/new">Ask A Question</a>
-        </div>
-        <div class="navbar-form form-group">
-        <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-        </div>
-        <% else %>
-        <div class="navbar-form form-group">
-        <%= link_to "Sign Up", new_user_registration_path %>
-        </div>
-        <div class="navbar-form form-group">
-        <%= link_to "Sign In", new_user_session_path %>
-        </div>
-        <% end %>
-      </form>
-    </div>
-  </div>
-</nav>
-
-  <% if flash.any? %>
-
-    <div class="flash">
-      <div class="container">
+  <div class="container">
+    <% if flash.any? %>
+      <div class="flash">
+        <div class="container">
           <% if alert != nil %>
-          <%= alert %>
+            <%= alert %>
           <% elsif notice.is_a? String %>
-          <%= notice %>
+            <%= notice %>
           <% elsif notice.size == 1 %>
             <%= notice.first %>
           <% else %>
             <% flash[:notice].each do |flash| %>
-            <%= flash %><br />
+              <%= flash %><br />
             <% end %>
-            <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
-
-  <div class="jumbotron">
-
-<%= yield %>
-
-</div>
-
+    <% end %>
+  <%= yield %>
 </body>
-<div class="container2" style="text-center">
-<img src="http://s30.postimg.org/630lt93pp/Screen_Shot_2015_03_25_at_8_47_22_PM.png" style="width: 8%; height: 8%"><br />
-habitsu.<br />
-©2015
-</div>
-</html>

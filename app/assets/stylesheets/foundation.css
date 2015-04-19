@@ -2292,6 +2292,7 @@ meta.foundation-mq-topbar {
   margin-left: -1.375rem;
   margin-right: 0;
   padding: 0;
+  margin-bottom: -5px;
   list-style: none;
   overflow: hidden; }
   .inline-list > li {

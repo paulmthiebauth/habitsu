@@ -3,6 +3,10 @@ Rails.application.routes.draw do
       devise_for :users
 
       resources :users do
+        resources :stats, only: [:index]
+      end
+
+      resources :users do
         member do
           get 'current'
           get 'yesterday'
@@ -12,6 +16,12 @@ Rails.application.routes.draw do
 
       resources :tasks do
         member do
+          patch :complete, :incomplete
+        end
+      end
+
+      resources :users, only: [:edit] do
+        resources :dailyhabits do
           patch :complete, :incomplete
         end
       end

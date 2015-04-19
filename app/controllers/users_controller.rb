@@ -1,6 +1,22 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: :show
 
   def index
+  @user = current_user
+  @scores = Dailyscore.where(user_id: @user.id)
+  User.weekly_completion_data(@weekly_scores)
+  @homepage_scores = PieManager.new(@user, @scores).home_scores
+
+  respond_to do |format|
+    format.html { render :index }
+    format.json { render json: @homepage_scores.to_json}
+
+  end
+
+  end
+
+
+  def update
   end
 
   def new
@@ -9,22 +25,28 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @users = current_user.id
     @plans = @user.plans
     @task = Task.new
-    @tasks = Task.where(user_id: params[:id])
-    @date = @user.current
-  end
+      if params[:q].nil?
+        @current_page = 0
+      else
+      @current_page = params[:q].to_i
+      end
+    @tasks = TaskManager.new(@user, @current_page).organized_tasks
+    @habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
 
-  def yesterday
-    # params["day"] = "Yesterday"
-    # redirect_to user_path(params[:id])
-  end
+    @todays_score = ScoreManager.new(@user, @habits, @current_page).daily_scores
+    @weekly_scores = ScoreManager.new(@user, @habits, @current_page).weekly_scores
+    # @user_score = User.weekly_completion_data(@weekly_scores)
+    # {:user_score => @user_score}.to_json
+    @date = @current_page.days.ago.localtime
 
-  def edit
-  end
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @weekly_scores.to_json}
 
-  def destroy
+    end
   end
-
 
 end

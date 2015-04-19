@@ -149,8 +149,8 @@ body .row .row {
 
 .nav {
   font-family: 'Quicksand', sans-serif; font-weight: 400;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 2px;
+  border-bottom: 1px dashed #e8e8e8;
 }
 
 .navright {
@@ -192,10 +192,11 @@ div .row {
   border: 1px solid #e8e8e8;
   border-radius: 4px;
   padding: 3px;
-  margin-right: 25px;
-  margin-left: 25px;
+  margin-right: 1px;
+  margin-left: 1px;
   padding-left: 10px;
   padding-right: 10px;
+  margin-bottom: 25px;
 }
 
 .todo h3 {
@@ -205,6 +206,7 @@ div .row {
   border-bottom: 1px solid #e8e8e8;
   border-radius: 4px;
   font-family: 'Quicksand', sans-serif; font-weight: 400;
+
 }
 
 .habit {
@@ -214,6 +216,7 @@ div .row {
   padding: 3px;
   padding-left: 7.5px;
   padding-right: 7.5px;
+  padding-bottom: 15px;
 
 }
 
@@ -229,11 +232,11 @@ div .row {
 .quote {
   border: 1px solid #e8e8e8;
   border-radius: 4px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   padding: 7.5px;
-  padding-bottom: 25px;
+  padding-bottom: 15px;
   font-style: italic;
-  padding-left: 8px;
+  padding-left: 20px;
   font-size: 18px;
   font-family: 'Quicksand', sans-serif; font-weight: 400;
 }
@@ -242,6 +245,8 @@ div .row {
   border: 1px solid #e8e8e8;
   border-radius: 4px;
   padding: 7.5px;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .complete-task {
@@ -252,17 +257,29 @@ div .row {
 }
 
 .new_task {
-  width: 80%;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  position: relative;
 }
 
 .task_label {
 }
 
 .task_name {
+  width: 90%;
+  display: inline-block;
+  margin-top: 5px;
+  text-align: center;
+  padding-left: 25px;
 }
 
 .task_submit {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  left: -33px;
+  top: 5px;
+  background-color: 'white';
 }
 
 .welcome-back {
@@ -294,5 +311,182 @@ div .row {
 .planname {
   font-size: 25px;
   margin-top: -25px;
+  text-align: center;
+}
+
+.tasksdate {
+  font-size: 20px;
+  padding-top: -10px;
+  max-width: 100% !important;
+  margin-left: 47px;
+  margin-top: 15px;
+  text-align: center;
+  margin-bottom: 15px;
+
+}
+
+.inline-list {
+  margin: 0 auto 1.0625rem auto;
+  margin-left: -1.375rem;
+  margin-right: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.habitlist {
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+  display: inline-block;
+  top: 50%;
+}
+
+.habitsulogo {
+  height: 36px;
+  width: 36px;
+}
+
+.flashnotice {
+  text-align: center;
+  height: 24px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.buttonToComplete {
+  background:url(/pendingcircle.PNG) no-repeat;
+  border: none;
+  height: 17px;
+  width: 16px;
+  display: inline-block;
+  top: 50%;
+  vertical-align: middle;
+  outline:none;
+}
+
+.taskname input {
+  margin-bottom: -20px;
+}
+
+.habitname {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  position: relative;
+
+}
+
+.button_to form {
+  display: inline-block;
+  top: 50%;
+}
+
+.button_to {
+  display: inline-block;
+  top: 50%;
+}
+
+.buttonToIncomplete {
+  background:url(/completedcircle.PNG) no-repeat;
+  border: none;
+  height: 17px;
+  width: 16px;
+  display: inline-block;
+  top: 50%;
+  vertical-align: middle;
+  outline:none;
+}
+
+.tasksubmit {
+  align: center;
+}
+
+.task_list_submit
+{
+  background:url(/plus.png);
+  background-color: 'white;'
+  outline:none;
+  border: none;
+  height: 23px;
+  width: 23.3px;
+}
+
+.field2 {
+  padding-top: 20px;
+  width: 50%;
+}
+
+.user_first_name {
+  width: 50%;
+}
+
+.mainquote {
+  font-style: italic;
+  padding-left: 30px;
+  padding-bottom: 15px;
+  font-size: 18px;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+.userindex {
+  padding-bottom: 20px;
+}
+
+.footer {
+  padding-left: 30px;
+}
+
+.welcome-back-header {
+  padding-bottom: 30px;
+}
+
+.incomplete-task {
+  margin-bottom: 20px;
+  margin-top: -20px;
+  padding-left: 5px;
+}
+
+.habit-stats-list-light-green {
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.habit-stats-list-medium-green {
+  background-color: #E0FFD1;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.habit-stats-list-dark-green {
+  background-color: #B4FF8F;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.habit-stats-list-darker-green {
+  background-color: #66FF33;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.inline-list ul {
+  margin-bottom: -5px;
+}
+
+.task-creation {
+  margin-bottom: 12px;
+}
+
+.legend {
+  margin-top: 25px;
   text-align: center;
 }
