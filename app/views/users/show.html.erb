@@ -75,6 +75,13 @@
     </div><br>
     <div id="habitlist2">
       <div>
+
+        <% if @user.plans.empty? %>
+        <div class="noplan">
+        You haven't signed up for any programs yet! <a href="/plans">Click here to get started.</a>
+        </div>
+        <% end %>
+
         <% @plans.each do |plan|%>
           <div class="planname">
             <%= plan.plan_name %>
@@ -88,7 +95,7 @@
 
                     <div id="habit-<%= habit.id %>-complete">
                       <div class="habitlist">
-                        <%= button_to "", user_dailyhabit_path(@user, habit), id: habit.habit_id, method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
+                        <%= button_to "", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
                       </div>
                       <div class="habitname">
                         <%= Habit.find(habit.habit_id).name %><br>

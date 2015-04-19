@@ -1,7 +1,7 @@
 var x = location.href;
 var x = x + ".json"
 
-$.getJSON(x, function(datax) {
+$.getJSON('/users.json', function(datax) {
 
 $(function () {
     $('#welcome-yesterday').highcharts({
@@ -46,7 +46,7 @@ $(function () {
 var x = location.href;
 var x = x + ".json"
 
-$.getJSON(x, function(datax) {
+$.getJSON('/users.json', function(datax) {
 
 $(function () {
     $('#welcome-average').highcharts({
@@ -90,7 +90,7 @@ $(function () {
 var x = location.href;
 var x = x + ".json"
 
-$.getJSON(x, function(datax) {
+$.getJSON('/users.json', function(datax) {
 
 $(function () {
     $('#welcome-today').highcharts({
