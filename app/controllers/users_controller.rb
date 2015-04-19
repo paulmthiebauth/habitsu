@@ -2,21 +2,21 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: :show
 
   def index
-  @user = current_user
-  @scores = Dailyscore.where(user_id: @user.id)
-  User.weekly_completion_data(@weekly_scores)
-  @homepage_scores = PieManager.new(@user, @scores).home_scores
+    if signed_in?
+      @user = current_user
+      @scores = Dailyscore.where(user_id: @user.id)
+      User.weekly_completion_data(@weekly_scores)
+      @homepage_scores = PieManager.new(@user, @scores).home_scores
 
-  respond_to do |format|
-    format.html { render :index }
-    format.json { render json: @homepage_scores.to_json}
+      respond_to do |format|
+        format.html { render :index }
+        format.json { render json: @homepage_scores.to_json}
+      end
 
-  end
+    else
+      redirect_to new_user_session_path
+    end
 
-  end
-
-
-  def update
   end
 
   def new
@@ -45,8 +45,11 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @weekly_scores.to_json}
-
     end
+  end
+
+  def update
+    binding.pry
   end
 
 end
