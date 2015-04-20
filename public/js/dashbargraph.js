@@ -5,7 +5,10 @@ $.getJSON(x, function(datax) {
           $(function () {
               $('#container2').highcharts({
                   chart: {
-                      type: 'bar'
+                      type: 'bar',
+                      style: {
+                            fontFamily: 'Quicksand'
+                        },
                   },
                   title: {
                       text: 'Daily Points'

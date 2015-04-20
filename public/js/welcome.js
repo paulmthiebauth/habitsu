@@ -6,7 +6,10 @@ $.getJSON('/users.json', function(datax) {
 $(function () {
     $('#welcome-yesterday').highcharts({
         chart: {
-            type: 'pie'
+            type: 'pie',
+            style: {
+                  fontFamily: 'Quicksand'
+              },
         },
         plotOptions: {
                 pie: {
@@ -51,7 +54,10 @@ $.getJSON('/users.json', function(datax) {
 $(function () {
     $('#welcome-average').highcharts({
         chart: {
-            type: 'pie'
+            type: 'pie',
+            style: {
+                  fontFamily: 'Quicksand'
+              },
         },
         plotOptions: {
                 pie: {
@@ -95,7 +101,10 @@ $.getJSON('/users.json', function(datax) {
 $(function () {
     $('#welcome-today').highcharts({
         chart: {
-            type: 'pie'
+            type: 'pie',
+            style: {
+                  fontFamily: 'Quicksand'
+              },
         },
         plotOptions: {
                 pie: {
