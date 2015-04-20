@@ -236,7 +236,6 @@ div .row {
   padding: 7.5px;
   padding-bottom: 15px;
   font-style: italic;
-  padding-left: 20px;
   font-size: 18px;
   font-family: 'Quicksand', sans-serif; font-weight: 400;
 }
@@ -497,4 +496,9 @@ div .row {
   margin-bottom: 10px;
   border-radius: 4px;
   padding: 5px;
+}
+
+.quote_text {
+  padding-left: 15px;
+  margin-top: -15px;
 }
