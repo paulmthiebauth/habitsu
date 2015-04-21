@@ -11,9 +11,9 @@
         <h3>Todays Mantra</h3>
         <br>
         <div class="quote_text">
-        "Help others achieve their dreams and you will achieve yours."<br>
-        -Les Brown
-      </div>
+          "Help others achieve their dreams and you will achieve yours."<br>
+          -Les Brown
+        </div>
       </div>
       <div class="graph">
         <div>
@@ -28,19 +28,19 @@
     <div class="todo">
       <h3>To Do List</h3>
       <div class="task-creation">
-      <div class="tasksdate">
-        <ul class="inline-list">
-          <li><div class="navbutton"><%= link_to image_tag("/leftarrow.png"), user_path(current_user, q: @current_page += 1 ), :id => "previous-tasks" %></div></li>
-                    <% @current_page -= 1 %>
-                    <li><%= (@current_page).days.ago.localtime.strftime('%a %B %e, %Y') %></li>
+        <div class="tasksdate">
+          <ul class="inline-list">
+            <li><div class="navbutton"><%= link_to image_tag("/leftarrow.png"), user_path(current_user, q: @current_page += 1 ), :id => "previous-tasks" %></div></li>
+            <% @current_page -= 1 %>
+            <li><%= (@current_page).days.ago.localtime.strftime('%a %B %e, %Y') %></li>
 
-          <% if @current_page >= 1 %>
-            <li><div class="navbutton"><%= link_to image_tag("/rightarrow.png"), user_path(current_user, q: @current_page -= 1 ) %></div></li>
-            <% @current_page += 1 %>
-          <% end %>
-        </ul>
+            <% if @current_page >= 1 %>
+              <li><div class="navbutton"><%= link_to image_tag("/rightarrow.png"), user_path(current_user, q: @current_page -= 1 ) %></div></li>
+              <% @current_page += 1 %>
+            <% end %>
+          </ul>
+        </div>
       </div>
-    </div>
 
       <% if @current_page == 0 %>
         <%= form_for [@user, @task] do |f| %>
@@ -48,7 +48,7 @@
             <%= f.text_field :name, size: 10%>
           </div>
           <div class="task_submit">
-            <%= f.submit "", :class => 'task_list_submit' %>
+            <%= f.submit "", :class => 'task_list_submit', :id => 'new_task_button' %>
           </div>
         <% end %>
       <% end %>
@@ -59,12 +59,11 @@
         <% @tasks.each do |task|%>
           <% if task.completed_at.nil? %>
             <div class = "incomplete-task">
-              <br><%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-incomplete", data: { confirm: "Delete this task?" }  %> <%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), :id => "task-#{task.id}-complete", method: :patch %>  <%= task.name %>
-
+              <br><%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-delete", data: { confirm: "Delete this task?" }  %> <%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), :id => "task-#{task.id}-complete", method: :patch %>  <%= task.name %>
           </div>
         <% else %>
           <div class="complete-task">
-            <%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-incomplete", data: { confirm: "Delete this task?" }  %>
+            <%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-delete", data: { confirm: "Delete this task?" }  %>
             <%= link_to image_tag("/completedcircle.png"), incomplete_task_path(task.id), :id => "task-#{task.id}-incomplete", method: :patch, data: { confirm: "Mark this task as incomplete?" } %>
             <%= task.name %> <br>
           </div>
@@ -83,9 +82,9 @@
       <div>
 
         <% if @user.plans.empty? %>
-        <div class="noplan">
-        You haven't signed up for any programs yet! <a href="/plans">Click here to get started.</a>
-        </div>
+          <div class="noplan">
+            You haven't signed up for any programs yet! <a href="/plans">Click here to get started.</a>
+          </div>
         <% end %>
 
         <% @plans.each do |plan|%>
@@ -94,55 +93,55 @@
           </div>
           <% if @habits.empty? %>
           <% else %>
-          <% @habits = @habits.sort_by {|x| x.streak_count }.reverse %>
+            <% @habits = @habits.sort_by {|x| x.streak_count }.reverse %>
             <% @habits.each do |habit| %>
-                <% if habit.plan_id == plan.id && habit.date >= @date.beginning_of_day %>
-                  <% if habit.completed_at.nil? %>
+              <% if habit.plan_id == plan.id && habit.date >= @date.beginning_of_day %>
+                <% if habit.completed_at.nil? %>
 
-                    <div id="habit-<%= habit.id %>-complete">
-                      <div class="habitlist">
-                        <%= button_to "", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
-                        <%= Habit.find(habit.habit_id).name %><br>
-                        <% if @current_page == 0 && habit.streak_count > 0 %>
+                  <div id="habit-<%= habit.id %>-complete">
+                    <div class="habitlist">
+                      <%= button_to "", user_dailyhabit_path(@user, habit), :id => "#{habit.id}-complete", method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
+                      <%= Habit.find(habit.habit_id).name %><br>
+                      <% if @current_page == 0 && habit.streak_count > 0 %>
                         <%= image_tag("/completedhabit.png") %> <%= habit.streak_count %> Day Streak
-                        <% end %>
-                      </div>
+                      <% end %>
+                    </div>
                   </div>
                   <div id="habit-<%=habit.id %>-incomplete" class="hidden">
                     <div class="complete-task">
-                      <%= button_to "", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'incomplete'}}, :class => "buttonToIncomplete" %>
+                      <%= button_to "", user_dailyhabit_path(@user, habit), :id => "#{habit.id}-incomplete", method: :patch, form: { data: {'habit-button' => 'incomplete'}}, :class => "buttonToIncomplete" %>
                       <%= Habit.find(habit.habit_id).name %><br>
                       <% if @current_page == 0 && habit.streak_count > 0 %>
-                      <%= image_tag("/completedhabit.png") %> <%= habit.streak_count + 1 %> Day Streak
+                        <%= image_tag("/completedhabit.png") %> <%= habit.streak_count + 1 %> Day Streak
                       <% end %>
+                    </div>
                   </div>
-                </div>
-              <% else %>
-                <div id="habit-<%=habit.id %>-incomplete">
-                  <div class="complete-task">
-                    <%= button_to "", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'incomplete'}}, :class => "buttonToIncomplete" %>
-                    <%= Habit.find(habit.habit_id).name %><br>
-                    <% if @current_page == 0 && habit.streak_count > 0 %>
-                    <%= image_tag("/completedhabit.png") %> <%= habit.streak_count %> Day Streak
-                    <% end %>
-                </div>
-              </div>
-              <div id="habit-<%= habit.id %>-complete" class="hidden">
-                <div class="habitlist">
-                  <% random_name = Habit.find(habit.habit_id).name %>
-                  <%= button_to "", user_dailyhabit_path(@user, habit), id: habit.habit_id, habit_name: random_name, method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
-                  <%= Habit.find(habit.habit_id).name %><br>
-                  <% if @current_page == 0 && habit.streak_count > 1 %>
-                  <%= image_tag("/completedhabit.png") %> <%= habit.streak_count - 1 %> Day Streak
-                  <% end %>
-              </div>
-            </div>
+                <% else %>
+                  <div id="habit-<%=habit.id %>-incomplete">
+                    <div class="complete-task">
+                      <%= button_to "", user_dailyhabit_path(@user, habit), :id => "#{habit.id}-incomplete",  method: :patch, form: { data: {'habit-button' => 'incomplete'}}, :class => "buttonToIncomplete" %>
+                      <%= Habit.find(habit.habit_id).name %><br>
+                      <% if @current_page == 0 && habit.streak_count > 0 %>
+                        <%= image_tag("/completedhabit.png") %> <%= habit.streak_count %> Day Streak
+                      <% end %>
+                    </div>
+                  </div>
+                  <div id="habit-<%= habit.id %>-complete" class="hidden">
+                    <div class="habitlist">
+                      <% random_name = Habit.find(habit.habit_id).name %>
+                      <%= button_to "", user_dailyhabit_path(@user, habit), :id => "#{habit.id}-complete", habit_name: random_name, method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
+                      <%= Habit.find(habit.habit_id).name %><br>
+                      <% if @current_page == 0 && habit.streak_count > 1 %>
+                        <%= image_tag("/completedhabit.png") %> <%= habit.streak_count - 1 %> Day Streak
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
           <% end %>
         <% end %>
-    <% end %>
-  <% end %>
-<% end %>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>

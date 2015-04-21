@@ -1,3 +1,7 @@
+var x = location.href;
+var x = x + ".json"
+
+
 $(document).ready(function() {
   $('[data-habit-button="complete"]').on('submit', function(event) {
     event.preventDefault();
@@ -17,6 +21,39 @@ $(document).ready(function() {
 
             $(complete_div).toggle();
             $(incomplete_div).fadeToggle();
+
+            $.getJSON(x, function(datax) {
+                      $(function () {
+                          $('#container2').highcharts({
+                              chart: {
+                                  type: 'bar',
+                                  style: {
+                                        fontFamily: 'Quicksand'
+                                    },
+                              },
+                              title: {
+                                  text: 'Daily Points'
+                              },
+                              xAxis: {
+                                  categories: [ 'Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+                              },
+                              yAxis: {
+                                  max: 100,
+                                  title: {
+                                      text: 'Points Earned'
+                                  }
+                              },
+                              series: [{
+                                  animation: false,
+                                  showInLegend: false,
+                                  name: "Points",
+                                  data: [ datax["Sunday"], datax["Monday"], datax["Tuesday"], datax["Wednesday"], datax["Thursday"], datax["Friday"], datax["Saturday"]],
+                              }]
+
+                          });
+                      });
+            });
+
       }
     });
    });
@@ -41,6 +78,38 @@ $(document).ready(function() {
         var incomplete_div = "#habit-" + result.id + "-incomplete"
             $(incomplete_div).toggle();
             $(complete_div).fadeToggle();
+
+            $.getJSON(x, function(datax) {
+                      $(function () {
+                          $('#container2').highcharts({
+                              chart: {
+                                  type: 'bar',
+                                  style: {
+                                        fontFamily: 'Quicksand'
+                                    },
+                              },
+                              title: {
+                                  text: 'Daily Points'
+                              },
+                              xAxis: {
+                                  categories: [ 'Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+                              },
+                              yAxis: {
+                                  max: 100,
+                                  title: {
+                                      text: 'Points Earned'
+                                  }
+                              },
+                              series: [{
+                                  animation: false,
+                                  showInLegend: false,
+                                  name: "Points",
+                                  data: [ datax["Sunday"], datax["Monday"], datax["Tuesday"], datax["Wednesday"], datax["Thursday"], datax["Friday"], datax["Saturday"]],
+                              }]
+
+                          });
+                      });
+            });
       }
     });
    });
