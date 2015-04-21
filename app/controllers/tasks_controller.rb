@@ -28,6 +28,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.update_attribute(:completed_at, DateTime.now)
     @task.update_attribute(:completed, "True")
+    flash[:notice] = ['Task complete.']
     redirect_to "/users/#{user_id}"
   end
 
@@ -36,6 +37,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.update_attribute(:completed_at, nil)
     @task.update_attribute(:completed, "False")
+    flash[:notice] = ['Task updated.']
     redirect_to "/users/#{user_id}"
   end
 
