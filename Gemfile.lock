@@ -96,6 +96,8 @@ GEM
     highline (1.7.2)
     hike (1.2.3)
     i18n (0.7.0)
+    informant-rails (0.8.0)
+      rails (>= 3.0.0, < 4.3.0)
     jbuilder (2.2.12)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -273,6 +275,7 @@ DEPENDENCIES
   devise
   factory_girl
   foundation-rails
+  informant-rails
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
