@@ -26,6 +26,7 @@ class TasksController < ApplicationController
   def destroy
     user_id = params[:user_id]
     Task.find(params[:id]).destroy
+    flash[:notice] = ['Task deleted.']
     redirect_to "/users/#{user_id}"
   end
 

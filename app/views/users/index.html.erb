@@ -9,49 +9,49 @@
 
 
 <div class="row">
-<% if signed_in? %>
-<div class="welcome-back">
-<div class="welcome-back-header">
-Welcome, <%= current_user.first_name %>!
-</div>
+  <% if signed_in? %>
+    <div class="welcome-back">
+      <div class="welcome-back-header">
+        Welcome, <%= current_user.first_name %>!
+      </div>
 
-<% if @user.plans.empty? %>
-Please <a href="/plans">choose a plan</a> to start!
+      <% if @user.plans.empty? %>
+        Please <a href="/plans">choose a plan</a> to start!
 
-<% else %>
+      <% else %>
 
-<div class="row">
-<div class="large-4 columns">
-<div id="welcome-yesterday"></div>
-</div>
-<div class="large-4 columns">
-<div id="welcome-today"></div>
-</div>
-<div class="large-4 columns">
-<div id="welcome-average"></div>
-</div>
-<div class="legend">
-<%= image_tag("/legend.png") %>
-</div>
-<% end %>
+        <div class="row">
+          <div class="large-4 columns">
+            <div id="welcome-yesterday"></div>
+          </div>
+          <div class="large-4 columns">
+            <div id="welcome-today"></div>
+          </div>
+          <div class="large-4 columns">
+            <div id="welcome-average"></div>
+          </div>
+          <div class="legend">
+            <%= image_tag("/legend.png") %>
+          </div>
+        <% end %>
 
 
 
-</div>
-</div>
-<% else %>
-<div class="row">
-<div class="large-6-columns">
-hey
-</div>
-<div class="large-6-columns">
-<div class="mainquote">
-"Excellence is an art won by training and habituation.<br>
-We are what we repeatedly do.<br>
-Excellence, then, is not an act but a habit."<br>
--Aristotle
-</div>
-</div>
-</div>
-<% end %>
+      </div>
+    </div>
+  <% else %>
+    <div class="row">
+      <div class="large-6-columns">
+        hey
+      </div>
+      <div class="large-6-columns">
+        <div class="mainquote">
+          "Excellence is an art won by training and habituation.<br>
+          We are what we repeatedly do.<br>
+          Excellence, then, is not an act but a habit."<br>
+          -Aristotle
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
