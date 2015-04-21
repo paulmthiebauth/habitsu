@@ -22,7 +22,6 @@ $(document).ready(function() {
    });
 });
 
-
 $(document).ready(function() {
   $('[data-habit-button="incomplete"]').on('submit', function(event) {
     event.preventDefault();

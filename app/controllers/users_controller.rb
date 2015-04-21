@@ -24,8 +24,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user)
-    # @users = current_user.id
+    @user = User.find(params[:id])
+    @users = current_user.id
     @plans = @user.plans
     @task = Task.new
       if params[:q].nil?

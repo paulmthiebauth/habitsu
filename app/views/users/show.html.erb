@@ -97,14 +97,13 @@
 
                     <div id="habit-<%= habit.id %>-complete">
                       <div class="habitlist">
-                        <%= button_to "", user_dailyhabit_path(@user, habit), method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
-                      </div>
-                      <div class="habitname">
+                        <% random_name = Habit.find(habit.habit_id).name %>
+                        <%= button_to "", user_dailyhabit_path(@user, habit), id: habit.habit_id, habit_name: random_name, method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
                         <%= Habit.find(habit.habit_id).name %><br>
                         <% if @current_page == 0 && habit.streak_count > 0 %>
                         <%= image_tag("/completedhabit.png") %> Current Streak : <%= habit.streak_count %>
                         <% end %>
-                    </div>
+                      </div>
                   </div>
                   <div id="habit-<%=habit.id %>-incomplete" class="hidden">
                     <div class="complete-task">

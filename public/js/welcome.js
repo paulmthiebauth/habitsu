@@ -96,7 +96,7 @@ $(function () {
 var x = location.href;
 var x = x + ".json"
 
-$.getJSON('/users.json', function(datax) {
+$.getJSON('users.json', function(datax) {
 
 $(function () {
     $('#welcome-today').highcharts({
