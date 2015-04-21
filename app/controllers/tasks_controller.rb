@@ -23,6 +23,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    user_id = params[:user_id]
+    Task.find(params[:id]).destroy
+    redirect_to "/users/#{user_id}"
+  end
+
+
   def complete
     user_id = current_user.id
     @task = Task.find(params[:id])
