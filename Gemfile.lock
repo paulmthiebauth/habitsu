@@ -42,6 +42,8 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bugsnag (2.8.5)
+      multi_json (~> 1.0)
     builder (3.2.2)
     byebug (4.0.3)
       columnize (= 0.9.0)
@@ -269,6 +271,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bugsnag
   byebug
   capybara
   coffee-rails (~> 4.1.0)
