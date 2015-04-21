@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user)
+    @user = User.find(current_user.id)
     # @users = current_user.id
     @plans = @user.plans
     @task = Task.new
