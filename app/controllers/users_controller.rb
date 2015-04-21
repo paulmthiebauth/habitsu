@@ -33,7 +33,10 @@ class UsersController < ApplicationController
       else
       @current_page = params[:q].to_i
       end
+
+    TaskManager.new(@user, @current_page).update_tasks
     @tasks = TaskManager.new(@user, @current_page).organized_tasks
+
     @habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
 
     @todays_score = ScoreManager.new(@user, @habits, @current_page).daily_scores
