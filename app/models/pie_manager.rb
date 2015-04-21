@@ -30,9 +30,9 @@ class PieManager
         five_day_total += 0
         count += 1
       else
-      score = Dailyscore.where(user_id: @user.id).where(date: (count.days.ago.localtime.beginning_of_day)..count.days.ago.localtime.end_of_day).first.total_score
-      five_day_total += score
-      count += 1
+        score = Dailyscore.where(user_id: @user.id).where(date: (count.days.ago.localtime.beginning_of_day)..count.days.ago.localtime.end_of_day).first.total_score
+        five_day_total += score
+        count += 1
       end
     end
     average = (five_day_total / 5)

@@ -1,33 +1,82 @@
 <div class="row">
 
   <div class="large-6 columns">
+    <div class="stats-streaks">
+      <h3> Current Streaks </h3>
     <% @habits.each do |habit| %>
     <% if habit.streak_count == 0 %>
+        <div class="small-10 columns">
         <div class="habit-stats-list-light-green">
         <%= Habit.find(habit.habit_id).name %><br>
         Current Streak: <%= habit.streak_count %>
         </div>
+        </div>
+        <div class="small-2 columns">
+          sup
+        </div>
     <% elsif habit.streak_count >= 1 && habit.streak_count < 5 %>
+    <div class="row">
+    <div class="small-10 columns">
     <div class="habit-stats-list-medium-green">
     <%= Habit.find(habit.habit_id).name %><br>
     Current Streak: <%= habit.streak_count %>
     </div>
+    </div>
+    <div class="small-2 columns">
+      <div class="habit-stats-icon">
+      <%= image_tag('/1.png') %>
+    </div>
+    </div>
+    </div>
     <% elsif habit.streak_count >= 5 && habit.streak_count < 10 %>
+    <div class="row">
+    <div class="small-10 columns">
     <div class="habit-stats-list-dark-green">
     <%= Habit.find(habit.habit_id).name %><br>
     Current Streak: <%= habit.streak_count %>
     </div>
+    </div>
+    <div class="small-2 columns">
+      <div class="habit-stats-icon">
+    <%= image_tag('/5.png') %>
+    </div>
+    </div>
+    </div>
     <% elsif habit.streak_count > 10 %>
+    <div class="row">
+    <div class="small-10 columns">
     <div class="habit-stats-list-darker-green">
       <%= Habit.find(habit.habit_id).name %><br>
       Current Streak: <%= habit.streak_count %>
     </div>
+    </div>
+    <div class="small-2 columns">
+      <div class="habit-stats-icon">
+    <%= image_tag('/10.png') %>
+  </div>
+    </div>
+    </div>
     <% end %>
     <% end %>
     </div>
 
-  <div class="large-6 columns">
+</div>
 
+  <div class="large-6 columns">
+    <div class="stats-plans">
+      <h3> Your Plans </h3>
+
+    <% @plans.each do |plan| %>
+    <div class="stats-plans-info">
+
+    <% plan_details =  Plan.find(plan.plan_id) %>
+    <%= Plan.find(plan.plan_id).plan_name %>
+
+    <%= button_to "Quit Plan", user_plan_path(@user, plan_details), id: plan.id, method: :delete %>
+    </div>
+    <% end %>
+
+  </div>
   </div>
 
   </div
