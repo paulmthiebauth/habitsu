@@ -55,6 +55,7 @@
 
 
       <div class="tasks">
+        <% @tasks = @tasks.sort_by {|x| x.completed }.reverse %>
         <% @tasks.each do |task|%>
           <% if task.completed_at.nil? %>
             <div class = "incomplete-task">
