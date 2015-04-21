@@ -59,6 +59,5 @@ gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'foundation-rails'
 gem 'omniauth-github'
-gem 'pg'
 gem 'rake'
 gem 'travis'
