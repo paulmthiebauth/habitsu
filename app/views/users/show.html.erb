@@ -30,9 +30,9 @@
       <div class="task-creation">
       <div class="tasksdate">
         <ul class="inline-list">
-          <li><div class="navbutton"><%= link_to image_tag("/leftarrow.png"), user_path(current_user, q: @current_page += 1 ), :id => "previous-tasks" %></div></li>
-                    <% @current_page -= 1 %>
-                    <li><%= (@current_page).days.ago.localtime.strftime('%a %B %e, %Y') %></li>
+          <li><div class="navbutton"><%= link_to image_tag("/leftarrow.png"), user_path(current_user, q: @current_page += 1 ) %></div></li>
+          <% @current_page -= 1 %>
+          <li><%= (@current_page).days.ago.localtime.strftime('%a %B %e, %Y') %></li>
 
           <% if @current_page >= 1 %>
             <li><div class="navbutton"><%= link_to image_tag("/rightarrow.png"), user_path(current_user, q: @current_page -= 1 ) %></div></li>
@@ -58,11 +58,11 @@
         <% @tasks.each do |task|%>
           <% if task.completed_at.nil? %>
             <div class = "incomplete-task">
-              <br><%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), :id => "task-#{task.id}-complete", method: :patch %> <%= task.name %>
+              <br><%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), method: :patch %> <%= task.name %>
           </div>
         <% else %>
           <div class="complete-task">
-            <%= link_to image_tag("/completedcircle.png"), incomplete_task_path(task.id), :id => "task-#{task.id}-incomplete", method: :patch, data: { confirm: "Mark this task as incomplete?" }%> <%= task.name %> <br>
+            <%= link_to image_tag("/completedcircle.png"), incomplete_task_path(task.id), method: :patch, data: { confirm: "Mark this task as incomplete?" }%> <%= task.name %> <br>
           </div>
         <% end %>
       <% end %>
@@ -140,7 +140,7 @@
     <% end %>
   <% end %>
 <% end %>
-  </div>
+</div>
 </div>
 </div>
 </div>
