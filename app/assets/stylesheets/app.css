@@ -405,11 +405,10 @@ div .row {
   align: center;
 }
 
-.task_list_submit
-{
+.task_list_submit {
   background:url(/plus.png);
-  background-color: 'white;'
-  outline:none;
+  background-color: 'white';
+  outline: none;
   border: none;
   height: 23px;
   width: 23.3px;

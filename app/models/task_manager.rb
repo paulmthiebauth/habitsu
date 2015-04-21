@@ -12,4 +12,13 @@ class TaskManager
       @user.tasks.where("created_at >= ?", DateTime.now.beginning_of_day)
     end
   end
+
+  def update_tasks
+    tasks_needing_rollover = @user.tasks.where(completed: "False")
+    tasks_needing_rollover.each do |task_update|
+      task_update.update(created_at: DateTime.now)
+    end
+  end
+
+
 end
