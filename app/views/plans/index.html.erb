@@ -1,9 +1,40 @@
 
-Featured Plans:<br>
+<div class ="row">
+<div class="large-6 columns">
+<div class="featured-plans">
+  <div class="featured-title">
+<h3>Featured Plans:<h3>
+</div>
+
+
 <% @plans.each do |plan| %>
+<div class="featured-plans-list">
+<div class="row">
 
+<div class="small-9 columns">
+
+<div class="plan-name">
 <%= plan.plan_name %>
+</div>
 
+<div class="plan-author">
+<%= plan.author %>
+</div>
+
+<div class="plan-author-info">
+<%= plan.author_info %>
+</div>
+</div>
+<div class="small-3 columns">
+  <div class="plan-sign-up">
 <%= button_to "Sign Up", user_plan_path(@user, plan), id: plan.id, method: :patch %>
-
+</div>
+</div>
+</div>
+</div>
 <% end %>
+
+
+</div>
+</div>
+</div>
