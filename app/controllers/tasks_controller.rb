@@ -48,6 +48,4 @@ class TasksController < ApplicationController
     flash[:notice] = ['Task updated.']
     redirect_to "/users/#{user_id}"
   end
-
-
 end
