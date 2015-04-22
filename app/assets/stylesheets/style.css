@@ -1,7 +1,7 @@
 body {
   color: #455a64;
-  background-color: #F5F8FA;
   font-family: 'Quicksand', sans-serif; font-weight: 400;
+  overflow:hidden;
 }
 
 
@@ -78,6 +78,9 @@ div .row {
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 25px;
+  overflow: hidden;
+
+  height: 56vh;
 }
 
 .todo h3 {
@@ -91,14 +94,9 @@ div .row {
 }
 
 .habit {
-
-  border: 1px solid #e8e8e8;
-  border-radius: 4px;
-  padding: 3px;
-  padding-left: 7.5px;
-  padding-right: 7.5px;
-  padding-bottom: 15px;
-
+  height: 50.8vh;
+  overflow: auto;
+  margin-top: 20px;
 }
 
 .habit h3 {
@@ -127,6 +125,8 @@ div .row {
   padding: 7.5px;
   padding-bottom: 15px;
   margin-bottom: 25px;
+  overflow: auto;
+  height: 40vh;
 }
 
 .complete-task {
@@ -190,8 +190,9 @@ div .row {
 
 .planname {
   font-size: 25px;
-  margin-top: -25px;
   text-align: center;
+  text-decoration: underline;
+  padding-bottom: 7px;
 }
 
 .tasksdate {
@@ -331,7 +332,7 @@ div .row {
 }
 
 .habit-stats-list-light-green {
-  border: 1px solid #e8e8e8;
+  border: 1px solid #E5FFCC;
   margin-bottom: 10px;
   border-radius: 4px;
   padding-top: 5px;
@@ -340,7 +341,7 @@ div .row {
 }
 
 .habit-stats-list-medium-green {
-  background-color: #E0FFD1;
+  background-color: #CEFFB5;
   margin-bottom: 10px;
   border-radius: 4px;
   padding-top: 5px;
@@ -349,7 +350,7 @@ div .row {
 }
 
 .habit-stats-list-dark-green {
-  background-color: #AADDAA;
+  background-color: #97CA97;
   margin-bottom: 10px;
   border-radius: 4px;
   padding-top: 5px;
@@ -358,7 +359,7 @@ div .row {
 }
 
 .habit-stats-list-darker-green {
-  background-color: #66FF33;
+  background-color: #8cc665;
   margin-bottom: 10px;
   border-radius: 4px;
   padding-top: 5px;
@@ -421,7 +422,7 @@ div .row {
 
 .stats-streaks h3 {
 
-  background-color: #FFDAB4;
+  background-color: #FFD392;
   border-bottom: 1px solid #e8e8e8;
   text-align: center;
   color: #455a64;
@@ -440,7 +441,7 @@ div .row {
 }
 
 .stats-plans h3 {
-  background-color: #C4E1FF;
+  background-color: #FFD392;
   border-radius: 4px;
   border-bottom: 1px solid #e8e8e8;
   text-align: center;
@@ -457,16 +458,16 @@ div .row {
 }
 
 .habit-stats-list-gold {
-  background-color: #FFD700;
+  background-color: #DFC463;
   margin-bottom: 10px;
   border-radius: 4px;
   padding: 5px;
 }
 
-.habit-stats-icon {
+.habit-stats-icon-gold {
   text-align: center;
   padding-top: 10px;
-  background-color: #FFD700;
+  background-color: #DFC463;
   padding-bottom: 10px;
   border-radius: 4px;
   padding-right: 5px;
@@ -475,4 +476,143 @@ div .row {
   height: 56px;
   width: 75px;
   border: 1px solid #e8e8e8;
+}
+
+
+
+.habit-stats-icon-silver {
+  text-align: center;
+  padding-top: 10px;
+  background-color: #C0C0C0;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-left: -16px;
+  height: 56px;
+  width: 75px;
+  border: 1px solid #e8e8e8;
+}
+
+
+
+
+.habit-stats-icon-bronze {
+  text-align: center;
+  padding-top: 10px;
+  background-color: #C49455;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-left: -16px;
+  height: 56px;
+  width: 75px;
+  border: 1px solid #e8e8e8;
+}
+
+.habit-stats-icon-white {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-left: -16px;
+  height: 56px;
+  width: 75px;
+  border: 1px solid #e8e8e8;
+}
+
+.featured-plans {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 3px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  padding-bottom: 15px;
+}
+
+.featured-title h3 {
+background-color: #FFDAB4;
+border-radius: 4px;
+text-align: center;
+color: #455a64;
+font-family: 'Quicksand', sans-serif; font-weight: 400;
+margin-bottom: 20px;
+}
+
+.plan-sign-up {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.plan-name {
+  font-size: 24px;
+}
+
+.plan-list {
+  margin-bottom: -20px;
+}
+
+.featured-plans-list {
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 3px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  margin-bottom: 10px;
+}
+
+.plan-container {
+  margin-top: 20px;
+}
+
+.habit-header {
+  margin-bottom: -10px;
+}
+
+a {
+  color: #455a64;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+a:hover {
+  color: #455a64;
+}
+
+a:visited {
+  color: #455a64;
+}
+
+.habitlist2 {
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    padding: 3px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    padding-bottom: -75px;
+    height: 56vh;
+    overflow: hidden;
+}
+
+.habitlist2 h3 {
+  background-color: #FFDAB4;
+  border-radius: 4px;
+  border-bottom: 1px solid #e8e8e8;
+  text-align: center;
+  color: #455a64;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+.habit::-webkit-scrollbar { width: 0 !important }
+
+
+.todo-items::-webkit-scrollbar { width: 0 !important }
+
+.todo-items {
+  height: 40.9vh;
+  overflow: auto;
+  margin-top: 5px;
 }
