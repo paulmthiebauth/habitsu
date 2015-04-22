@@ -32,6 +32,7 @@ class TasksController < ApplicationController
 
 
   def complete
+    binding.pry
     user_id = current_user.id
     @task = Task.find(params[:id])
     @task.update_attribute(:completed_at, DateTime.now)
@@ -41,6 +42,7 @@ class TasksController < ApplicationController
   end
 
   def incomplete
+    binding.pry
     user_id = current_user.id
     @task = Task.find(params[:id])
     @task.update_attribute(:completed_at, nil)
