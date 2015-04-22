@@ -19,9 +19,10 @@ class PlansController < ApplicationController
 
   def destroy
     user = User.find(params[:user_id])
-    Signup.where(user_id: params[:user_id], plan_id: params[:id]).first.destroy_all
+    Signup.where(user_id: params[:user_id], plan_id: params[:id]).first.destroy
+    Dailyhabit.where(user_id: params[:user_id], plan_id: params[:id]).destroy_all
     flash[:notice] = "You've successfully unenrolled."
-    redirect to user_stats_path(user)
+    redirect_to user_stats_path(user)
   end
 
 
