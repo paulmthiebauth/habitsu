@@ -1,6 +1,15 @@
 <script src="//code.highcharts.com/highcharts.js"></script>
 <script src="/js/dashbargraph.js"></script>
+<script src="/js/plans.js"></script>
 <link href='//fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       $(e).fadeToggle(800);
+    }
+//-->
+</script>
 <%= csrf_meta_tags %>
 
 <div class="row">
@@ -53,13 +62,13 @@
         <% end %>
       <% end %>
 
-
+      <div class="todo-items">
       <div class="tasks">
         <% @tasks = @tasks.sort_by {|x| x.completed }.reverse %>
         <% @tasks.each do |task|%>
           <% if task.completed_at.nil? %>
             <div class = "incomplete-task">
-              <br><%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-delete", data: { confirm: "Delete this task?" }  %> <%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), method: :patch %>  <%= task.name %>
+              <br><%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-delete", data: { confirm: "Delete this task?" }  %> <%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), :id => "task-#{task.id}-complete", method: :patch %>  <%= task.name %>
           </div>
         <% else %>
           <div class="complete-task">
@@ -71,14 +80,15 @@
       <% end %>
     </div>
   </div>
+  </div>
 </div>
 
 <div class="large-4 columns">
+  <div class="habitlist2">
+  <div class="habit-header">
+    <h3>Habit Checklist</h3>
+  </div>
   <div class="habit">
-    <div>
-      <h3>Habit Checklist</h3>
-    </div><br>
-    <div id="habitlist2">
       <div>
 
         <% if @user.plans.empty? %>
@@ -88,16 +98,18 @@
         <% end %>
 
         <% @plans.each do |plan|%>
+        <div class="plan-container">
           <div class="planname">
-            <%= plan.plan_name %>
+            <% toggle = plan.id %>
+            <a href="#" onclick='toggle_visibility("plan-<%= plan.id %>");'><%=plan.plan_name %></a>
           </div>
           <% if @habits.empty? %>
           <% else %>
+          <div id="plan-<%= plan.id %>" class="hidden">
             <% @habits = @habits.sort_by {|x| x.streak_count }.reverse %>
             <% @habits.each do |habit| %>
               <% if habit.plan_id == plan.id && habit.date >= @date.beginning_of_day %>
                 <% if habit.completed_at.nil? %>
-
                   <div id="habit-<%= habit.id %>-complete">
                     <div class="habitlist">
                       <%= button_to "", user_dailyhabit_path(@user, habit), :id => "#{habit.id}-complete", method: :patch, form: { data: {'habit-button' => 'complete'}}, :class => "buttonToComplete" %>
@@ -139,6 +151,8 @@
                 <% end %>
               <% end %>
             <% end %>
+          </div>
+        </div>
           <% end %>
         <% end %>
       </div>
