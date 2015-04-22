@@ -1,7 +1,6 @@
 body {
   color: #455a64;
   font-family: 'Quicksand', sans-serif; font-weight: 400;
-  overflow:hidden;
 }
 
 
@@ -125,8 +124,6 @@ div .row {
   padding: 7.5px;
   padding-bottom: 15px;
   margin-bottom: 25px;
-  overflow: auto;
-  height: 40vh;
 }
 
 .complete-task {
@@ -616,3 +613,12 @@ a:visited {
   overflow: auto;
   margin-top: 5px;
 }
+
+.stats-container {
+  height: 56vh;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  overflow: auto;
+}
+
+.stats-container::-webkit-scrollbar { width: 0 !important }
