@@ -48,6 +48,16 @@ div .row {
   border-radius: 4px;
 }
 
+.quote h3 {
+  background-color: #C4E1FF;
+  border-bottom: 1px solid #e8e8e8;
+  text-align: center;
+  color: #455a64;
+  border-radius: 4px;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+
+}
+
 .stats h3 {
   background-color: #C4E1FF;
   border-bottom: 1px solid #e8e8e8;
@@ -55,6 +65,7 @@ div .row {
   color: #455a64;
   border-radius: 4px;
   font-family: 'Quicksand', sans-serif; font-weight: 400;
+  margin-bottom: -5px;
 }
 
 .todo {

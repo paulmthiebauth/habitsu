@@ -6,15 +6,15 @@
 <div class="row">
 
   <div class="large-4 columns">
-    <div class="stats">
       <div class="quote">
         <h3>Todays Mantra</h3>
         <br>
         <div class="quote_text">
           "Help others achieve their dreams and you will achieve yours."<br>
           -Les Brown
-        </div>
       </div>
+    </div>
+      <div class="stats">
       <div class="graph">
         <div>
           <h3>Daily Completion Rates</h3><br>
@@ -59,12 +59,12 @@
         <% @tasks.each do |task|%>
           <% if task.completed_at.nil? %>
             <div class = "incomplete-task">
-              <br><%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-delete", data: { confirm: "Delete this task?" }  %> <%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), :id => "task-#{task.id}-complete", method: :patch %>  <%= task.name %>
+              <br><%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-delete", data: { confirm: "Delete this task?" }  %> <%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), method: :patch %>  <%= task.name %>
           </div>
         <% else %>
           <div class="complete-task">
             <%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-delete", data: { confirm: "Delete this task?" }  %>
-            <%= link_to image_tag("/completedcircle.png"), incomplete_task_path(task.id), :id => "task-#{task.id}-incomplete", method: :patch, data: { confirm: "Mark this task as incomplete?" } %>
+            <%= link_to image_tag("/completedcircle.png"), incomplete_task_path(task.id), method: :patch, :id => "task-#{task.id}-incomplete", data: { confirm: "Mark this task as incomplete?" } %>
             <%= task.name %> <br>
           </div>
         <% end %>

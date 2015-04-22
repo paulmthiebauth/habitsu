@@ -11,7 +11,7 @@ $.getJSON(x, function(datax) {
                         },
                   },
                   title: {
-                      text: 'Daily Points'
+                      text: ''
                   },
                   xAxis: {
                       categories: [ 'Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -19,7 +19,7 @@ $.getJSON(x, function(datax) {
                   yAxis: {
                       max: 100,
                       title: {
-                          text: 'Points Earned'
+                          text: ''
                       }
                   },
                   series: [{

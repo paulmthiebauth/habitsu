@@ -32,7 +32,7 @@ $(document).ready(function() {
                                     },
                               },
                               title: {
-                                  text: 'Daily Points'
+                                  text: ''
                               },
                               xAxis: {
                                   categories: [ 'Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -40,7 +40,7 @@ $(document).ready(function() {
                               yAxis: {
                                   max: 100,
                                   title: {
-                                      text: 'Points Earned'
+                                      text: ''
                                   }
                               },
                               series: [{
@@ -89,7 +89,7 @@ $(document).ready(function() {
                                     },
                               },
                               title: {
-                                  text: 'Daily Points'
+                                  text: ''
                               },
                               xAxis: {
                                   categories: [ 'Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -97,7 +97,7 @@ $(document).ready(function() {
                               yAxis: {
                                   max: 100,
                                   title: {
-                                      text: 'Points Earned'
+                                      text: ''
                                   }
                               },
                               series: [{

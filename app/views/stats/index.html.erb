@@ -46,7 +46,7 @@
     </div>
     </div>
     </div>
-    <% elsif habit.streak_count > 10 %>
+    <% elsif habit.streak_count > 10 && habit.streak_count < 21 %>
     <div class="row">
     <div class="small-10 columns">
     <div class="habit-stats-list-darker-green">
@@ -60,6 +60,20 @@
   </div>
     </div>
     </div>
+    <% elsif habit.streak_count > 20 %>
+    <div class="row">
+    <div class="small-10 columns">
+    <div class="habit-stats-list-gold">
+      <%= Habit.find(habit.habit_id).name %><br>
+      Current Streak: <%= habit.streak_count %>
+    </div>
+    </div>
+    <div class="small-2 columns">
+      <div class="habit-stats-icon">
+    <%= image_tag('/21.png') %>
+  </div>
+    </div>
+  </div>
     <% end %>
     <% end %>
     </div>
