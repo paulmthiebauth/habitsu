@@ -189,9 +189,9 @@ div .row {
 .planname {
   font-size: 25px;
   text-align: center;
-  margin-top: -18px;
+  margin-top: -22px;
   border-bottom: 1px solid #e8e8e8;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .tasksdate {
@@ -624,3 +624,7 @@ a:visited {
 }
 
 .stats-container::-webkit-scrollbar { width: 0 !important }
+
+.inline-list {
+  margin-bottom: -10px;
+}
