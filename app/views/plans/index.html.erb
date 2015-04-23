@@ -2,8 +2,8 @@
 <div class ="row">
 <div class="large-6 columns">
 <div class="featured-plans">
-  <div class="featured-title">
-<h3>Featured Plans:<h3>
+<div class="featured-title">
+<h3>Featured Plans<h3>
 </div>
 
 
@@ -27,7 +27,8 @@
 </div>
 <div class="small-3 columns">
   <div class="plan-sign-up">
-<%= button_to "Sign Up", user_plan_path(@user, plan), id: plan.id, method: :patch %>
+    <%= image_tag('/featured.png') %><br>
+<%= button_to "", user_plan_path(@user, plan), :id => "plan-#{plan.id}", method: :patch, :class => 'add_plan' %>
 </div>
 </div>
 </div>

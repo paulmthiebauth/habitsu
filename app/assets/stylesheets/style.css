@@ -18,7 +18,7 @@ body .row .row {
 
 .nav {
   font-family: 'Quicksand', sans-serif; font-weight: 400;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
   border-bottom: 1px dashed #e8e8e8;
 }
 
@@ -189,7 +189,7 @@ div .row {
 .planname {
   font-size: 25px;
   text-align: center;
-  margin-top: -22px;
+  margin-top: -10px;
   border-bottom: 1px solid #e8e8e8;
   margin-bottom: 10px;
 }
@@ -286,14 +286,7 @@ div .row {
   align: center;
 }
 
-.task_list_submit {
-  background:url(/plus.png);
-  background-color: 'white';
-  outline: none;
-  border: none;
-  height: 23px;
-  width: 23.3px;
-}
+
 
 .field2 {
   padding-top: 20px;
@@ -331,7 +324,7 @@ div .row {
 }
 
 .habit-stats-list-light-green {
-  border: 1px solid #E5FFCC;
+  border: 1px solid #F8FFF4;
   margin-bottom: 10px;
   border-radius: 4px;
   padding-top: 5px;
@@ -340,7 +333,7 @@ div .row {
 }
 
 .habit-stats-list-medium-green {
-  background-color: #CEFFB5;
+  background-color: #F0FFE9;
   margin-bottom: 10px;
   border-radius: 4px;
   padding-top: 5px;
@@ -349,7 +342,7 @@ div .row {
 }
 
 .habit-stats-list-dark-green {
-  background-color: #97CA97;
+  background-color: #DAFFC8;
   margin-bottom: 10px;
   border-radius: 4px;
   padding-top: 5px;
@@ -358,7 +351,7 @@ div .row {
 }
 
 .habit-stats-list-darker-green {
-  background-color: #8cc665;
+  background-color: #CEFFB5;
   margin-bottom: 10px;
   border-radius: 4px;
   padding-top: 5px;
@@ -421,7 +414,7 @@ div .row {
 
 .stats-streaks h3 {
 
-  background-color: #FFD392;
+  background-color: #FFDAB4;
   border-bottom: 1px solid #e8e8e8;
   text-align: center;
   color: #455a64;
@@ -457,37 +450,34 @@ div .row {
 }
 
 .habit-stats-list-gold {
-  background-color: #DFC463;
+  background-color: #EDDBA6;
   margin-bottom: 10px;
   border-radius: 4px;
   padding: 5px;
 }
 
 .habit-stats-icon-gold {
+  background-color: #EDDBA6;
   text-align: center;
   padding-top: 10px;
-  background-color: #DFC463;
   padding-bottom: 10px;
   border-radius: 4px;
   padding-right: 5px;
   padding-left: 5px;
-  margin-left: -16px;
+  margin-left: -11px;
   height: 56px;
   width: 75px;
   border: 1px solid #e8e8e8;
 }
 
-
-
 .habit-stats-icon-silver {
   text-align: center;
   padding-top: 10px;
-  background-color: #C0C0C0;
   padding-bottom: 10px;
   border-radius: 4px;
   padding-right: 5px;
   padding-left: 5px;
-  margin-left: -16px;
+  margin-left: -11px;
   height: 56px;
   width: 75px;
   border: 1px solid #e8e8e8;
@@ -499,12 +489,11 @@ div .row {
 .habit-stats-icon-bronze {
   text-align: center;
   padding-top: 10px;
-  background-color: #C49455;
   padding-bottom: 10px;
   border-radius: 4px;
   padding-right: 5px;
   padding-left: 5px;
-  margin-left: -16px;
+  margin-left: -11px;
   height: 56px;
   width: 75px;
   border: 1px solid #e8e8e8;
@@ -517,7 +506,7 @@ div .row {
   border-radius: 4px;
   padding-right: 5px;
   padding-left: 5px;
-  margin-left: -16px;
+  margin-left: -11px;
   height: 56px;
   width: 75px;
   border: 1px solid #e8e8e8;
@@ -543,7 +532,7 @@ margin-bottom: 20px;
 
 .plan-sign-up {
   text-align: center;
-  padding-top: 25px;
+  padding-top: 10px;
 }
 
 .plan-name {
@@ -561,10 +550,11 @@ margin-bottom: 20px;
   padding-left: 7.5px;
   padding-right: 7.5px;
   margin-bottom: 10px;
+  padding-bottom: -20px;
 }
 
 .plan-container {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .habit-header {
@@ -627,4 +617,34 @@ a:visited {
 
 .inline-list {
   margin-bottom: -10px;
+}
+
+.streak-item {
+  margin-bottom: -20px;
+}
+
+.planname a {
+  margin-bottom: 25px;
+}
+
+.habits {
+  margin-bottom: 10px;
+}
+
+.task_list_submit {
+  background:url(/plus.png);
+  background-color: 'white';
+  outline: none;
+  border: none;
+  height: 23px;
+  width: 23.3px;
+}
+
+.add_plan {
+  background:url(/signup2.png);
+  background-color: 'white';
+  outline: none;
+  border: none;
+  height: 31px;
+  width: 31px;
 }

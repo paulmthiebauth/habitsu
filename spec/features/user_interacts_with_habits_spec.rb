@@ -16,7 +16,7 @@ describe "user views plans" do
     habit = FactoryGirl.create(:habit)
     dailyhabit = Dailyhabit.create(user_id: user.id, habit_id: habit.id, point_value: 0, plan_id: plan.id, date: DateTime.now)
     visit plans_path
-    click_button "Sign Up"
+    click_button("plan-#{plan.id}")
     click_button("#{dailyhabit.id}-complete")
     visit(current_path)
     expect dailyhabit.completed_at != nil
@@ -29,7 +29,7 @@ describe "user views plans" do
     habit = FactoryGirl.create(:habit)
     dailyhabit = Dailyhabit.create(user_id: user.id, habit_id: habit.id, point_value: 0, plan_id: plan.id, date: DateTime.now)
     visit plans_path
-    click_button "Sign Up"
+    click_button("plan-#{plan.id}")
     click_button("#{dailyhabit.id}-complete")
     visit(current_path)
     click_button("#{dailyhabit.id}-incomplete")

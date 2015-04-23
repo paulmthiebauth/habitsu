@@ -107,8 +107,10 @@
           </div>
           <% if @habits.empty? %>
           <% else %>
+          <div class="habits">
           <div id="plan-<%= plan.id %>" class="hidden">
             <% @habits = @habits.sort_by {|x| x.streak_count }.reverse %>
+
             <% @habits.each do |habit| %>
               <% if habit.plan_id == plan.id && habit.date >= @date.beginning_of_day %>
                 <% if habit.completed_at.nil? %>
@@ -153,6 +155,7 @@
                 <% end %>
               <% end %>
             <% end %>
+          </div>
           </div>
         </div>
           <% end %>
