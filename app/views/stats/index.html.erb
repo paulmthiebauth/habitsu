@@ -99,9 +99,9 @@
 <%= plan_details.author_info %>
 </div>
 </div>
-<div class="small-3 columns">
+<div class="small-3 columns" id="plan-button">
   <div class="plan-sign-up">
-<%= button_to "Quit Plan", user_plan_path(@user, plan_details), id: plan.id, method: :delete %>
+<%= button_to "", user_plan_path(@user, plan_details), :id => "plan-#{plan.id}-quit" , method: :delete, :class => 'quit_plan' %>
 </div>
 </div>
 </div>

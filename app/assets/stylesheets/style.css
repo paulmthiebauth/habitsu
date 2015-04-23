@@ -518,7 +518,6 @@ div .row {
   padding: 3px;
   padding-left: 7.5px;
   padding-right: 7.5px;
-  padding-bottom: 15px;
 }
 
 .featured-title h3 {
@@ -532,7 +531,15 @@ margin-bottom: 20px;
 
 .plan-sign-up {
   text-align: center;
-  padding-top: 10px;
+  border: 1px dashed #e8e8e8;
+  margin-top: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
+padding-bottom: 15px;
+}
+
+.plan-sigh-up input {
+  margin-bottom: 20px;
 }
 
 .plan-name {
@@ -647,4 +654,18 @@ a:visited {
   border: none;
   height: 31px;
   width: 31px;
+}
+
+.quit_plan {
+  background:url(/quitplan.png);
+  background-color: 'white';
+  outline: none;
+  border: none;
+  height: 31px;
+  width: 31px;
+  margin-top: 15px;
+}
+
+.plan-button {
+  margin-bottom:30px;
 }
