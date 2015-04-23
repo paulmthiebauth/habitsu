@@ -12,17 +12,17 @@ describe "user views plans" do
 
 
     scenario "I view plans page to see a list of plan" do
-    FactoryGirl.create(:plan)
+    plan = FactoryGirl.create(:plan)
     sign_in_as(user)
     visit plans_path
     expect(page).to have_content('Daily success plan')
     end
 
     scenario "I view plans page to sign up for a plan" do
-    FactoryGirl.create(:plan)
+    plan = FactoryGirl.create(:plan)
     sign_in_as(user)
     visit plans_path
-    click_button "Sign Up"
+    click_button("plan-#{plan.id}")
     expect(page).to have_content('Daily success plan')
     end
 
@@ -32,7 +32,7 @@ describe "user views plans" do
     habit = FactoryGirl.create(:habit)
     Dailyhabit.create(user_id: user.id, habit_id: habit.id, point_value: 0, plan_id: plan.id, date: DateTime.now)
     visit plans_path
-    click_button "Sign Up"
+    click_button("plan-#{plan.id}")
     expect(page).to have_content('Rise at 7 AM')
     end
   end
