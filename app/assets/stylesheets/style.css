@@ -79,7 +79,7 @@ div .row {
   margin-bottom: 25px;
   overflow: hidden;
 
-  height: 56vh;
+  height: 60vh;
 }
 
 .todo h3 {
@@ -93,7 +93,7 @@ div .row {
 }
 
 .habit {
-  height: 50.8vh;
+  height: 55vh;
   overflow: auto;
   margin-top: 20px;
   border-radius: 4px;
@@ -125,6 +125,7 @@ div .row {
   padding: 7.5px;
   padding-bottom: 15px;
   margin-bottom: 25px;
+  height: 43.5vh;
 }
 
 .complete-task {
@@ -530,16 +531,19 @@ margin-bottom: 20px;
 }
 
 .plan-sign-up {
-  text-align: center;
+  margin-top: 32px;
+  padding: 9px;
   border: 1px dashed #e8e8e8;
-  margin-top: 15px;
-  margin-right: 20px;
-  margin-left: 20px;
-padding-bottom: 15px;
+  border-radius: 4px;
+  margin-right: 33px;
+  padding-left: -30px;
+  margin-left: 10px;
+  padding-bottom: 20px;
+  height: 50px;
+  width: 50px;
 }
 
 .plan-sigh-up input {
-  margin-bottom: 20px;
 }
 
 .plan-name {
@@ -557,7 +561,7 @@ padding-bottom: 15px;
   padding-left: 7.5px;
   padding-right: 7.5px;
   margin-bottom: 10px;
-  padding-bottom: -20px;
+  padding-bottom: -50px;
 }
 
 .plan-container {
@@ -589,7 +593,7 @@ a:visited {
     padding-left: 7.5px;
     padding-right: 7.5px;
     padding-bottom: -75px;
-    height: 56vh;
+    height: 60vh;
     overflow: hidden;
 }
 
@@ -614,10 +618,10 @@ a:visited {
 }
 
 .stats-container {
-  height: 56vh;
+  height: 60vh;
   border-radius: 4px;
   margin-bottom: 25px;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .stats-container::-webkit-scrollbar { width: 0 !important }
@@ -654,6 +658,9 @@ a:visited {
   border: none;
   height: 31px;
   width: 31px;
+
+  text-align: center;
+  padding: 5px;
 }
 
 .quit_plan {
@@ -663,9 +670,52 @@ a:visited {
   border: none;
   height: 31px;
   width: 31px;
-  margin-top: 15px;
+  padding-top: 20px;
 }
 
 .plan-button {
   margin-bottom:30px;
+}
+
+.plan-info {
+  padding-top: 17px;
+  padding-left: 10px;
+}
+
+.featured-logo {
+  text-align:center;
+  margin-top: 40px;
+}
+
+.featured-plan-sign-up {
+  margin-top: 34px;
+  padding: 8px;
+  border: 1px dashed #e8e8e8;
+  border-radius: 4px;
+  margin-right: 50px;
+  padding-left: -30px;
+  margin-left: -10px;
+  padding-bottom: 20px;
+  height: 50px;
+  width: 50px;
+}
+
+.goal-title {
+  padding:20px;
+  margin-left: 10px;
+  margin-top: 22px;
+}
+
+
+
+.goal-browse {
+  margin-top: 34px;
+  border: 1px dashed #e8e8e8;
+  border-radius: 4px;
+  margin-right: 50px;
+  padding-left: -30px;
+  margin-left: -10px;
+  padding-bottom: 20px;
+  height: 50px;
+  width: 50px;
 }

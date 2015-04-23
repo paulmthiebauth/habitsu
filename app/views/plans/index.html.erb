@@ -11,7 +11,9 @@
 <div class="featured-plans-list">
 <div class="row">
 
-<div class="small-9 columns">
+<div class="small-8 columns">
+  <div class="plan-info">
+
 
 <div class="plan-name">
 <%= plan.plan_name %>
@@ -25,9 +27,15 @@
 <%= plan.author_info %>
 </div>
 </div>
-<div class="small-3 columns">
-  <div class="plan-sign-up">
+</div>
+<div class="small-2 columns">
+  <div class="featured-logo">
     <%= image_tag('/featured.png') %><br>
+  </div>
+</div>
+<div class="small-2 columns">
+
+  <div class="featured-plan-sign-up">
 <%= button_to "", user_plan_path(@user, plan), :id => "plan-#{plan.id}", method: :patch, :class => 'add_plan' %>
 </div>
 </div>
@@ -35,6 +43,89 @@
 </div>
 <% end %>
 
+
+</div>
+</div>
+<div class="large-6 columns">
+  <div class="featured-plans">
+    <div class="featured-title">
+    <h3>Browse By Goal<h3>
+    </div>
+    <div class="featured-plans-list">
+    <div class="row">
+      <div class="small-8 columns">
+      <div class="goal-title">
+        <div class="plan-name">
+        Train Your Brain
+      </div>
+      </div>
+      </div>
+
+      <div class="small-2 columns">
+        <div class="goal-browse">
+          <%= image_tag('/brain2.png') %><br>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-plans-list">
+      <div class="row">
+        <div class="small-8 columns">
+        <div class="goal-title">
+          <div class="plan-name">
+          Save More Money
+        </div>
+        </div>
+        </div>
+
+        <div class="small-2 columns">
+          <div class="goal-browse">
+            <%= image_tag('/finance2.png') %><br>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-plans-list">
+        <div class="row">
+          <div class="small-8 columns">
+          <div class="goal-title">
+            <div class="plan-name">
+            Get Fit
+          </div>
+          </div>
+          </div>
+
+          <div class="small-2 columns">
+            <div class="goal-browse">
+              <%= image_tag('/fitness2.png') %><br>
+            </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="featured-plans-list">
+          <div class="row">
+            <div class="small-8 columns">
+            <div class="goal-title">
+              <div class="plan-name">
+              Eat Healthier
+            </div>
+            </div>
+            </div>
+
+            <div class="small-2 columns">
+              <div class="goal-browse">
+                <%= image_tag('/diet2.png') %><br>
+              </div>
+              </div>
+            </div>
+          </div>
+
+
+</div>
 
 </div>
 </div>
