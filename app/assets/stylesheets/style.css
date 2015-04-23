@@ -125,7 +125,7 @@ div .row {
   padding: 7.5px;
   padding-bottom: 15px;
   margin-bottom: 25px;
-  height: 43.5vh;
+  height: 43.7vh;
 }
 
 .complete-task {
@@ -612,9 +612,10 @@ a:visited {
 .todo-items::-webkit-scrollbar { width: 0 !important }
 
 .todo-items {
-  height: 40.9vh;
+  height: 45.5vh;
   overflow: auto;
   margin-top: 5px;
+  border-radius: 4px;
 }
 
 .stats-container {
@@ -718,4 +719,14 @@ a:visited {
   padding-bottom: 20px;
   height: 50px;
   width: 50px;
+}
+
+.graph h3 {
+  background-color: #C4E1FF;
+  border-bottom: 1px solid #e8e8e8;
+  text-align: center;
+  color: #455a64;
+  border-radius: 4px;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+  margin-bottom: 15px;
 }
