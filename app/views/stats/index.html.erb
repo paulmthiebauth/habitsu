@@ -64,37 +64,45 @@
 </div>
 </div>
 
+<div class ="row">
 <div class="large-6 columns">
-  <div class="stats-plans">
-    <h3> Your Plans </h3>
-    <div class="plan-list">
-    <div class="row">
-
-    <% @plans.each do |plan| %>
-    <% plan_details =  Plan.find(plan.plan_id) %>
-    <div class="small-9 columns">
-
-    <div class="plan-name">
-    <%= plan_details.plan_name %>
-    </div>
-
-    <div class="plan-author">
-    <%= plan_details.author %>
-    </div>
-
-    <div class="plan-author-info">
-    <%= plan_details.author_info %>
-    </div>
-    </div>
-    <div class="small-3 columns">
-      <div class="plan-sign-up">
-      <%= button_to "Quit Plan", user_plan_path(@user, plan_details), id: plan.id, method: :delete %>
-    </div>
-    </div>
-    <% end %>
-    </div>
-    </div>
-  </div>
+<div class="featured-plans">
+  <div class="featured-title">
+<h3>Current Plans <h3>
 </div>
 
-</div
+
+<% @plans.each do |plan| %>
+<% plan_details =  Plan.find(plan.plan_id) %>
+<div class="featured-plans-list">
+<div class="row">
+
+<div class="small-9 columns">
+
+<div class="plan-name">
+<%= plan_details.plan_name %>
+</div>
+
+<div class="plan-author">
+<%= plan_details.author %>
+</div>
+
+<div class="plan-author-info">
+<%= plan_details.author_info %>
+</div>
+</div>
+<div class="small-3 columns">
+  <div class="plan-sign-up">
+<%= button_to "Quit Plan", user_plan_path(@user, plan_details), id: plan.id, method: :delete %>
+</div>
+</div>
+</div>
+</div>
+<% end %>
+
+
+</div>
+</div>
+</div>
+
+</div>

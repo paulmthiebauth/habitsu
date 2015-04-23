@@ -6743,6 +6743,7 @@ div .row {
   height: 50.8vh;
   overflow: auto;
   margin-top: 20px;
+  border-radius: 4px;
 }
 
 .habit h3 {
@@ -6835,8 +6836,8 @@ div .row {
 .planname {
   font-size: 25px;
   text-align: center;
-  text-decoration: underline;
-  padding-bottom: 7px;
+  margin-top: -18px;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .tasksdate {
