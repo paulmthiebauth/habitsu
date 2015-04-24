@@ -63,4 +63,4 @@ gem 'rake'
 gem 'travis'
 gem 'informant-rails'
 gem 'bugsnag'
-gem 'coveralls'
+gem 'coveralls', require: false
