@@ -64,3 +64,4 @@ gem 'travis'
 gem 'informant-rails'
 gem 'bugsnag'
 gem 'coveralls', require: false
+gem 'puma'
