@@ -65,4 +65,4 @@ gem 'informant-rails'
 gem 'bugsnag'
 gem 'puma'
 gem 'coveralls', require: false
-gem 'simple_cov'
+gem 'simplecov'
