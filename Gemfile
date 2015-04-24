@@ -63,5 +63,8 @@ gem 'rake'
 gem 'travis'
 gem 'informant-rails'
 gem 'bugsnag'
-gem 'coveralls', require: false
 gem 'puma'
+
+group :test do
+  gem 'coveralls', require: false
+end
