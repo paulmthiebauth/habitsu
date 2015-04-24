@@ -64,7 +64,5 @@ gem 'travis'
 gem 'informant-rails'
 gem 'bugsnag'
 gem 'puma'
-
-group :test do
-  gem 'coveralls', require: false
-end
+gem 'coveralls', require: false
+gem 'simple_cov'
