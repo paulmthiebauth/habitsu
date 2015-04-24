@@ -14,3 +14,4 @@
 /.env
 /.coveralls.yml
 .coveralls.yml
+/coverage
