@@ -1,4 +1,5 @@
 class StatsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     date = ((DateTime.now.beginning_of_day)..DateTime.now.end_of_day)

@@ -1,22 +1,18 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: :show
-
   def index
     if signed_in?
       @user = current_user
       @scores = Dailyscore.where(user_id: @user.id)
       User.weekly_completion_data(@weekly_scores)
       @homepage_scores = PieManager.new(@user, @scores).home_scores
-
       respond_to do |format|
         format.html { render :index }
         format.json { render json: @homepage_scores.to_json}
       end
-
     else
       redirect_to new_user_session_path
     end
-
   end
 
   def new
@@ -24,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    start_time = Time.now
     @user = User.find(current_user.id)
     @plans = @user.plans
     @task = Task.new
@@ -46,6 +43,6 @@ class UsersController < ApplicationController
       format.html { render :show }
       format.json { render json: @weekly_scores.to_json}
     end
+    puts (Time.now - start_time) * 1000
   end
-
 end

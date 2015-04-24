@@ -62,4 +62,5 @@ gem 'omniauth-github'
 gem 'rake'
 gem 'travis'
 gem 'informant-rails'
-gem "bugsnag"
+gem 'bugsnag'
+gem 'coveralls'

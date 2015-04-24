@@ -1,4 +1,6 @@
 class DailyhabitsController < ApplicationController
+
+  before_action :authenticate_user!
   respond_to :html, :json
   def update
     habit = current_user.dailyhabits.find(params[:id])
