@@ -1,16 +1,5 @@
 class HabitsController < ApplicationController
-  @habit_list_basic = [
-    "Wake up early",
-    "Make bed",
-    "Eat breakfast",
-    "Motivational Mantra",
-    "Update To Do List"
-  ]
-
-  @habit_list_overhaul = [
-  ]
-
-  @monday_score = 5
+  before_action :authenticate_user!
 
   def index
     @user = User.find(params[:user_id])
@@ -20,9 +9,6 @@ class HabitsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @habit = Habit.new
-  end
-
-  def show
   end
 
   def create
