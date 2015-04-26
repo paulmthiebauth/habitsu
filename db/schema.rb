@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422175050) do
+ActiveRecord::Schema.define(version: 20150426175848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150422175050) do
   create_table "dailyhabits", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "habit_id"
-    t.integer  "point_value"
+    t.float    "point_value"
     t.datetime "completed_at"
     t.datetime "date"
     t.integer  "plan_id"

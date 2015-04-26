@@ -14,15 +14,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
 
-  def current
-    if @todays_date.nil?
-      @todays_date = DateTime.now
-    end
-    @todays_date
-  end
-
   def self.weekly_completion_data(scores)
     scores
   end
-
 end
