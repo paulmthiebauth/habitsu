@@ -18,7 +18,10 @@ habit7 = Habit.create(name: 'Greet people by their first name')
 habit8 = Habit.create(name: 'Evening review: To do list')
 habit9 = Habit.create(name: 'Write down what you learned today')
 habit10 = Habit.create(name: 'Pick out tomorrows outfit')
-habit11 = Habit.create(name: "'If I live everyday the same way I did today, what future would that create?'")
+habit11 = Habit.create(
+  name: "'If I live everyday the same way I did today,
+  what future would that create?'"
+  )
 
 Planhabit.create(plan_id: plan.id, habit_id: habit1.id)
 Planhabit.create(plan_id: plan.id, habit_id: habit2.id)
@@ -33,7 +36,10 @@ Planhabit.create(plan_id: plan.id, habit_id: habit10.id)
 Planhabit.create(plan_id: plan.id, habit_id: habit11.id)
 
 
-plan2 = Plan.create(plan_name: 'Launch Prep-Standard', author: 'Paul M. Thiebauth', author_info: 'Web Developer - Boston, MA')
+plan2 = Plan.create(
+  plan_name: 'Launch Prep-Standard', author: 'Paul M. Thiebauth',
+  author_info: 'Web Developer - Boston, MA'
+  )
 habit12 = Habit.create(name: 'Read Launcher material for 30 mins')
 habit13 = Habit.create(name: 'Practice coding for 45 mins')
 habit14 = Habit.create(name: 'Create 5 new Ruby/Rails flashcards')
@@ -49,7 +55,10 @@ Planhabit.create(plan_id: plan2.id, habit_id: habit15.id)
 Planhabit.create(plan_id: plan2.id, habit_id: habit16.id)
 
 
-plan3 = Plan.create(plan_name: 'Launch Prep-Elite Edition', author: 'Paul M. Thiebauth', author_info: 'Web Developer - Boston, MA')
+plan3 = Plan.create(
+  plan_name: 'Launch Prep-Elite Edition', author: 'Paul M. Thiebauth',
+  author_info: 'Web Developer - Boston, MA'
+  )
 
 habit17 = Habit.create(name: 'Read Launcher material for 1hr')
 habit18 = Habit.create(name: 'Practice coding for 2hrs')
@@ -64,7 +73,10 @@ Planhabit.create(plan_id: plan3.id, habit_id: habit19.id)
 Planhabit.create(plan_id: plan3.id, habit_id: habit20.id)
 Planhabit.create(plan_id: plan3.id, habit_id: habit21.id)
 
-plan4 = Plan.create(plan_name: 'Launch Prep-Beastmode', author: 'Paul M. Thiebauth', author_info: 'Web Developer - Boston, MA')
+plan4 = Plan.create(
+  plan_name: 'Launch Prep-Beastmode', author: 'Paul M. Thiebauth', 
+  author_info: 'Web Developer - Boston, MA'
+  )
 
 habit22 = Habit.create(name: 'Read Launcher material for 1.5hrs')
 habit23 = Habit.create(name: 'Practice coding for 3hrs')
