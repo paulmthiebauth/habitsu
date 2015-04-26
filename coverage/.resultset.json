@@ -217,7 +217,6 @@
       ],
       "/Users/paul/challenges/habitsu-2/habitsu/app/models/habit_manager.rb": [
         1,
-        null,
         1,
         24,
         24,
@@ -252,8 +251,6 @@
         24,
         null,
         null,
-        null,
-        null,
         1,
         0,
         0,
@@ -268,7 +265,6 @@
         null,
         0,
         0,
-        null,
         null,
         null,
         null,
@@ -478,6 +474,6 @@
         null
       ]
     },
-    "timestamp": 1430066865
+    "timestamp": 1430068474
   }
 }
