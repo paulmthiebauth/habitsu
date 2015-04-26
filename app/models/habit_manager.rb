@@ -1,5 +1,4 @@
 class HabitManager
-
   def initialize(user, habits, num_days_ago)
     @user = user
     @habits = habits
@@ -34,8 +33,6 @@ class HabitManager
     daily
   end
 
-
-
   def streak_counter
   date = 0.days.ago.localtime
     @habits.each do |habit|
@@ -53,5 +50,4 @@ class HabitManager
       end
     end
   end
-
 end
