@@ -1,9 +1,11 @@
 require 'rails_helper'
 
-feature 'User marks a task as complete', %Q{
-  As a user
+feature 'User marks a task as complete or incomplete', %Q{
+As a user
 I want to be able to mark a task as complete
 So that I do not repeat the task
+
+I want to be able to mark a task as incomplete
 } do
 
 describe "completing task items" do
