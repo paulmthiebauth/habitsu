@@ -247,6 +247,10 @@
         null,
         null,
         null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/paul/challenges/habitsu-2/habitsu/app/models/planhabit.rb": [
@@ -457,6 +461,6 @@
         null
       ]
     },
-    "timestamp": 1430081804
+    "timestamp": 1430089033
   }
 }
