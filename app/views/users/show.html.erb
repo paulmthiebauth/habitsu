@@ -69,7 +69,8 @@
         <% @tasks.each do |task|%>
           <% if task.completed_at.nil? %>
             <div class = "incomplete-task">
-              <br><%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-delete", data: { confirm: "Delete this task?" }  %> <%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), :id => "task-#{task.id}-complete", method: :patch %>  <%= task.name %>
+              <br><%= button_to "", user_task_path(@user, task), method: :delete, :class => 'delete_task', :id => "task-#{task.id}-delete", data: { confirm: "Delete this task?" }  %>
+              <%= link_to image_tag("/pendingcircle.png"), complete_task_path(task.id), :id => "task-#{task.id}-complete", method: :patch %>  <%= task.name %>
           </div>
         <% else %>
           <div class="complete-task">
