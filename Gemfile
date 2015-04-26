@@ -66,3 +66,8 @@ gem 'bugsnag'
 gem 'puma'
 gem 'coveralls', require: false
 gem 'simplecov'
+
+
+group :test do
+  gem 'coveralls', require: false
+end
