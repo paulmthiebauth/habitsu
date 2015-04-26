@@ -1,3 +1,3 @@
-[![Build Status](https://travis-ci.org/<paulmthiebauth>/<habitsu>.svg?branch=master)](https://travis-ci.org/<paulmthiebauth>/<habitsu>)
-[![Code Climate](https://codeclimate.com/github/<paulmthiebauth>/<habitsu>.png)](https://codeclimate.com/github/<paulmthiebauth>/<habitsu>)
-[![Coverage Status](https://coveralls.io/repos/<paulmthiebauth>/<habitsu>/badge.png)](https://coveralls.io/r/<paulmthiebauth>/<habitsu>)
+[![Build Status](https://travis-ci.org/paulmthiebauth/habitsu.svg?branch=master)](https://travis-ci.org/paulmthiebauth/habitsu)
+[![Code Climate](https://codeclimate.com/github/paulmthiebauth/habitsu.png)](https://codeclimate.com/github/paulmthiebauth/habitsu)
+[![Coverage Status](https://coveralls.io/repos/paulmthiebauth/habitsu/badge.png)](https://coveralls.io/r/paulmthiebauth/habitsu)
