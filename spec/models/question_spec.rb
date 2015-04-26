@@ -1,5 +1,4 @@
 require 'rails_helper'
-# 
 # RSpec.describe Drink, type: :model do
 #   it { should have_valid(:title).when('White Russian', 'Bourbon Neat') }
 #   it { should_not have_valid(:title).when('shrt', '', nil) }

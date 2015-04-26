@@ -1,0 +1,15 @@
+Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/**
+    - config/initializers/devise.rb
+    - config/application.rb
+    - bin/setup
+    - config/environments/**
+    - bin/spring
+    - config/initializers/**
+    - Gemfile
+    - Rakefile
