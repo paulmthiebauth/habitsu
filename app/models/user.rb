@@ -21,18 +21,6 @@ class User < ActiveRecord::Base
     @todays_date
   end
 
-  def today
-    @todays_date = DateTime.now
-  end
-
-  def yesterday
-    @todays_date = @todays_date.yesterday
-  end
-
-  def tomorrow
-    @todays_date = @todays_date.tomorrow
-  end
-
   def self.weekly_completion_data(scores)
     scores
   end
