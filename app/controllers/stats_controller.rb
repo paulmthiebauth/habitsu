@@ -6,6 +6,7 @@ class StatsController < ApplicationController
     @habits = Dailyhabit.where(user_id: current_user.id, date: date).sort_by{ |x| x.streak_count}.reverse
     @plans = Signup.where(user_id: current_user.id)
     @user = current_user
+    HabitManager.new(@user, @user.habits, 0).streak_counter
   end
 
 end
