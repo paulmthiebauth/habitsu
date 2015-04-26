@@ -26,3 +26,7 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+[![Build Status](https://travis-ci.org/paulmthiebauth/habitsu.svg?branch=master)](https://travis-ci.org/paulmthiebauth/habitsu) [![Code Climate](https://codeclimate.com/github/paulmthiebauth/habitsu.png)](https://codeclimate.com/github/paulmthiebauth/habitsu)
+[![Coverage Status](https://coveralls.io/repos/paulmthiebauth/habitsu/badge.png)](https://coveralls.io/r/paulmthiebauth/habitsu)
