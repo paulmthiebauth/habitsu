@@ -40,7 +40,6 @@
         1,
         47,
         null,
-        null,
         null
       ],
       "/Users/paul/challenges/habitsu-2/habitsu/app/controllers/users_controller.rb": [
@@ -424,13 +423,18 @@
         3,
         2,
         2,
+        null,
+        null,
+        null,
         2,
         2,
         2,
         2,
         2,
         2,
-        4,
+        2,
+        2,
+        null,
         2,
         null,
         null,
@@ -453,6 +457,6 @@
         null
       ]
     },
-    "timestamp": 1430072339
+    "timestamp": 1430081804
   }
 }
