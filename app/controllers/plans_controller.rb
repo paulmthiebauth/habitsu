@@ -2,7 +2,6 @@ class PlansController < ApplicationController
   before_action :authenticate_user!
   def index
     @user = current_user
-
     @plans = Plan.all
   end
 
@@ -24,6 +23,4 @@ class PlansController < ApplicationController
     flash[:notice] = "You've successfully unenrolled."
     redirect_to user_stats_path(user)
   end
-
-
 end
