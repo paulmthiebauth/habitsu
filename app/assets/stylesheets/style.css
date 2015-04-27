@@ -79,7 +79,7 @@ div .row {
   margin-bottom: 25px;
   overflow: hidden;
 
-  height: 60vh;
+  height: 97.5vh;
 }
 
 .todo h3 {
@@ -125,7 +125,7 @@ div .row {
   padding: 7.5px;
   padding-bottom: 15px;
   margin-bottom: 25px;
-  height: 43.7vh;
+  height: 70.7vh;
 }
 
 .complete-task {
@@ -593,7 +593,7 @@ a:visited {
     padding-left: 7.5px;
     padding-right: 7.5px;
     padding-bottom: -75px;
-    height: 60vh;
+    height: 97.5vh;
     overflow: hidden;
 }
 
@@ -619,7 +619,7 @@ a:visited {
 }
 
 .stats-container {
-  height: 60vh;
+  height: 100vh;
   border-radius: 4px;
   margin-bottom: 25px;
   overflow: hidden;
