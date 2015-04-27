@@ -140,6 +140,20 @@
         119,
         null,
         null,
+        1,
+        85,
+        null,
+        85,
+        null,
+        null,
+        null,
+        null,
+        1,
+        34,
+        34,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/paul/challenges/habitsu-2/habitsu/app/models/signup.rb": [
@@ -510,6 +524,6 @@
         null
       ]
     },
-    "timestamp": 1430108532
+    "timestamp": 1430168692
   }
 }
