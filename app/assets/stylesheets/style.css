@@ -78,8 +78,9 @@ div .row {
   padding-right: 10px;
   margin-bottom: 25px;
   overflow: hidden;
+  height: 750px;
 
-  height: 97.5vh;
+/*   height: 97.5vh; */
 }
 
 .todo h3 {
@@ -93,10 +94,12 @@ div .row {
 }
 
 .habit {
-  height: 55vh;
+/*   height: 55vh; */
+  height: 680px;
   overflow: auto;
   margin-top: 20px;
   border-radius: 4px;
+/*   border: 1px solid black; */
 }
 
 .habit h3 {
@@ -125,7 +128,8 @@ div .row {
   padding: 7.5px;
   padding-bottom: 15px;
   margin-bottom: 25px;
-  height: 70.7vh;
+/*   height: 70.7vh; */
+height: 550px;
 }
 
 .complete-task {
@@ -593,7 +597,8 @@ a:visited {
     padding-left: 7.5px;
     padding-right: 7.5px;
     padding-bottom: -75px;
-    height: 97.5vh;
+/*     height: 97.5vh; */
+    height: 750px;
     overflow: hidden;
 }
 
@@ -612,14 +617,16 @@ a:visited {
 .todo-items::-webkit-scrollbar { width: 0 !important }
 
 .todo-items {
-  height: 45.5vh;
+/*   height: 45.5vh; */
+height: 570px;
   overflow: auto;
   margin-top: 5px;
   border-radius: 4px;
 }
 
 .stats-container {
-  height: 100vh;
+/*   height: 100vh; */
+height: 775px;
   border-radius: 4px;
   margin-bottom: 25px;
   overflow: hidden;
