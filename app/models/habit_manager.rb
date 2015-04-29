@@ -8,7 +8,7 @@ class HabitManager
   def daily_habits
     if @num_days_ago > 0
       date = @num_days_ago.days.ago.localtime
-      x = 1
+      second_counter = 1
       @habits.each do |habit|
         if days_habits(date, habit).empty?
           plan = Planhabit.where(habit_id: habit.id)
@@ -19,10 +19,10 @@ class HabitManager
             plan_id: plan.first.plan_id,
             point_value: 0,
             completed_at: nil,
-            date: date + x.second
+            date: date + second_counter.second
           )
 
-          x += 1
+          second_counter += 1
         else
           days_habits(date, habit).first.update(streak_count: 0)
         end
