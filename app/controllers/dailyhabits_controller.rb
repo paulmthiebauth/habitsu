@@ -15,8 +15,6 @@ class DailyhabitsController < ApplicationController
       end
     elsif !habit.completed_at.nil?
       PointsManager.new(current_user, habit).remove_points
-      habit.update_attribute(:completed_at, nil)
-      habit.update_attribute(:point_value, 0 )
       respond_to do |format|
         if habit.save
           format.html do
