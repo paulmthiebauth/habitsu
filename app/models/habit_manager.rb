@@ -29,7 +29,7 @@ class HabitManager
       end
       daily = Dailyhabit.where(
       user_id: @user.id,
-      date: (date.beginning_of_day)..date.end_of_day
+      date: todays_date_range(date)
       )
 
     else
@@ -57,7 +57,7 @@ class HabitManager
 
           daily = Dailyhabit.where(
             user_id: @user.id,
-            date: (date.beginning_of_day)..date.end_of_day
+            date: todays_date_range(date)
           )
         end
       end
@@ -92,7 +92,12 @@ class HabitManager
     user_id: @user.id,
     habit_id: habit.id
     ).where(
-    date: (date.beginning_of_day)..date.end_of_day
+    date: todays_date_range(date)
     )
   end
+
+  def todays_date_range(date)
+    (date.beginning_of_day)..date.end_of_day
+  end
+
 end
