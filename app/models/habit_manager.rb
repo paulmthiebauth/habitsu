@@ -71,16 +71,9 @@ class HabitManager
       date = @num_days_ago.days.ago.localtime - count.day
       days_habits(date, habit).first.update(streak_count: 0)
         while !days_habits(date, habit).empty? && !days_habits(date, habit).first.completed_at.nil?
-            streak = Dailyhabit.where(
-            user_id: @user.id,
-            habit_id: habit.id
-            ).where(date: (
-            DateTime.now.beginning_of_day)..DateTime.now.end_of_day
-            ).first
-
+            streak = days_habits(DateTime.now, habit).first
             current_streak = streak.streak_count
             streak.update(streak_count: current_streak + 1)
-
             count += 1
             date = @num_days_ago.days.ago.localtime - count.day
         end
