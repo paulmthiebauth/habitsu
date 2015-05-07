@@ -108,7 +108,7 @@
           <% if @habits.empty? %>
           <% else %>
           <div class="habits">
-          <div id="plan-<%= plan.id %>" class="hidden">
+          <div id="plan-<%= plan.id %>">
             <% @habits = @habits.sort_by {|x| x.streak_count }.reverse %>
 
             <% @habits.each do |habit| %>
