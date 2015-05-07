@@ -737,3 +737,10 @@ height: 775px;
   font-family: 'Quicksand', sans-serif; font-weight: 400;
   margin-bottom: 15px;
 }
+
+
+.test-info {
+  padding-top: 25px;
+  font-size: 18px;
+  text-transform: lowercase;
+}
