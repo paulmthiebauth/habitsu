@@ -6,5 +6,5 @@ class Dailyhabit < ActiveRecord::Base
 
   validates :user_id, uniqueness: {
   scope: :date, message: "User can only vote once per review."
-}
+  }
 end
