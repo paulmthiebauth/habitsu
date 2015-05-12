@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
 
+  ###Note : address this method
+
   def self.weekly_completion_data(scores)
     scores
   end
