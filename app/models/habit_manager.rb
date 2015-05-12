@@ -1,3 +1,5 @@
+###Note : clean this up!!!
+
 class HabitManager
   def initialize(user, habits, num_days_ago)
     @user = user
@@ -48,11 +50,15 @@ class HabitManager
     daily
   end
 
+###Look into refactoring this
+
   def streak_counter
     @habits.each do |habit|
       count = 0
       date = @num_days_ago.days.ago.localtime - count.day
-      days_habits(date, habit).first.update(streak_count: 0)
+      if !days_habits(date, habit).empty?
+        days_habits(date, habit).first.update(streak_count: 0)
+      end
         while !days_habits(date, habit).empty? && !days_habits(date, habit).first.completed_at.nil?
             streak = days_habits(DateTime.now, habit).first
             current_streak = streak.streak_count

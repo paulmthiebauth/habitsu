@@ -13,6 +13,8 @@ class TaskManager
     end
   end
 
+
+  ###Look into improvement
   def update_tasks
     tasks_needing_rollover = @user.tasks.where(completed: "False")
     tasks_needing_rollover.each do |task_update|

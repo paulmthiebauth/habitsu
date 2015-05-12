@@ -1,3 +1,5 @@
+###Note : refactor as soon as possible
+
 class PieManager
   def initialize(user, scores)
     @user = user

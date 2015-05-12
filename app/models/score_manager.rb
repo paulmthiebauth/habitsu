@@ -1,3 +1,6 @@
+###Note : isolate potentiall issues with naming of methods
+
+
 class ScoreManager
   def initialize(user, habits, num_days_ago)
     @user = user
