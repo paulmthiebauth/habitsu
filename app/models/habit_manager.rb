@@ -52,6 +52,8 @@ class HabitManager
 
 ###Look into refactoring this
 
+###Window functions
+
   def streak_counter
     @habits.each do |habit|
       count = 0
@@ -69,6 +71,8 @@ class HabitManager
     end
   end
 
+
+###Possibly remove .where, test performance
   def days_habits(date, habit)
     Dailyhabit.where(
     user_id: @user.id,
