@@ -73,6 +73,7 @@ class HabitManager
 
 
 ###Possibly remove .where, test performance
+
   def days_habits(date, habit)
     Dailyhabit.where(
     user_id: @user.id,
