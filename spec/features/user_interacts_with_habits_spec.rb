@@ -36,6 +36,7 @@ To help me achieve my goals
       visit(current_path)
       click_button("#{dailyhabit.id}-incomplete")
       visit(current_path)
+      
       expect dailyhabit.completed_at.nil?
     end
   end
