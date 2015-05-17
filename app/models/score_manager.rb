@@ -1,4 +1,4 @@
-###Note : isolate potentiall issues with naming of methods
+###Note : isolate potential issues with naming of methods
 
 
 class ScoreManager
