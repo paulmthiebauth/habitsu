@@ -3,116 +3,116 @@
     <div class="stats-streaks">
       <h3> Current Streaks </h3>
       <% @habits.each do |habit| %>
-      <% if habit.streak_count >= 1 && habit.streak_count < 5 %>
+        <% if habit.streak_count >= 1 && habit.streak_count < 5 %>
+          <div class="streak-item">
+            <div class="row">
+              <div class="small-10 columns">
+                <div class="habit-stats-list-medium-green">
+                  <%= Habit.find(habit.habit_id).name %><br>
+                  Current Streak: <%= habit.streak_count %>
+              </div>
+            </div>
+            <div class="small-2 columns">
+              <div class="habit-stats-icon-white">
+                <%= image_tag('/1.png') %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% elsif habit.streak_count >= 5 && habit.streak_count < 10 %>
+        <div class="streak-item">
+          <div class="row">
+            <div class="small-10 columns">
+              <div class="habit-stats-list-dark-green">
+                <%= Habit.find(habit.habit_id).name %><br>
+                Current Streak: <%= habit.streak_count %>
+            </div>
+          </div>
+          <div class="small-2 columns">
+            <div class="habit-stats-icon-bronze">
+              <%= image_tag('/5.png') %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% elsif habit.streak_count > 10 && habit.streak_count < 21 %>
       <div class="streak-item">
         <div class="row">
           <div class="small-10 columns">
-            <div class="habit-stats-list-medium-green">
+            <div class="habit-stats-list-darker-green">
               <%= Habit.find(habit.habit_id).name %><br>
               Current Streak: <%= habit.streak_count %>
           </div>
         </div>
         <div class="small-2 columns">
-          <div class="habit-stats-icon-white">
-            <%= image_tag('/1.png') %>
+          <div class="habit-stats-icon-silver">
+            <%= image_tag('/10.png') %>
           </div>
         </div>
       </div>
     </div>
-    <% elsif habit.streak_count >= 5 && habit.streak_count < 10 %>
+  <% elsif habit.streak_count > 20 %>
     <div class="streak-item">
       <div class="row">
         <div class="small-10 columns">
-          <div class="habit-stats-list-dark-green">
+          <div class="habit-stats-list-gold">
             <%= Habit.find(habit.habit_id).name %><br>
             Current Streak: <%= habit.streak_count %>
         </div>
       </div>
       <div class="small-2 columns">
-        <div class="habit-stats-icon-bronze">
-          <%= image_tag('/5.png') %>
+        <div class="habit-stats-icon-gold">
+          <%= image_tag('/21.png') %>
         </div>
       </div>
     </div>
   </div>
-  <% elsif habit.streak_count > 10 && habit.streak_count < 21 %>
-  <div class="streak-item">
-    <div class="row">
-      <div class="small-10 columns">
-        <div class="habit-stats-list-darker-green">
-          <%= Habit.find(habit.habit_id).name %><br>
-          Current Streak: <%= habit.streak_count %>
-      </div>
-    </div>
-    <div class="small-2 columns">
-      <div class="habit-stats-icon-silver">
-        <%= image_tag('/10.png') %>
-      </div>
-    </div>
-  </div>
-</div>
-<% elsif habit.streak_count > 20 %>
-<div class="streak-item">
-  <div class="row">
-    <div class="small-10 columns">
-      <div class="habit-stats-list-gold">
-        <%= Habit.find(habit.habit_id).name %><br>
-        Current Streak: <%= habit.streak_count %>
-    </div>
-  </div>
-  <div class="small-2 columns">
-    <div class="habit-stats-icon-gold">
-      <%= image_tag('/21.png') %>
-    </div>
-  </div>
-</div>
-</div>
-    <% end %>
+<% end %>
   <% end %>
 </div>
 </div>
 
 <div class ="row">
-<div class="large-6 columns">
-<div class="featured-plans">
-  <div class="featured-title">
-<h3>Current Plans <h3>
-</div>
+  <div class="large-6 columns">
+    <div class="featured-plans">
+      <div class="featured-title">
+        <h3>Current Plans <h3>
+          </div>
 
 
-<% @plans.each do |plan| %>
-<% plan_details =  Plan.find(plan.plan_id) %>
-<div class="featured-plans-list">
-<div class="row">
+          <% @plans.each do |plan| %>
+            <% plan_details =  Plan.find(plan.plan_id) %>
+            <div class="featured-plans-list">
+              <div class="row">
 
-<div class="small-9 columns">
-  <div class="plan-info">
+                <div class="small-9 columns">
+                  <div class="plan-info">
 
-<div class="plan-name">
-<%= plan_details.plan_name %>
-</div>
+                    <div class="plan-name">
+                      <%= plan_details.plan_name %>
+                    </div>
 
-<div class="plan-author">
-<%= plan_details.author %>
-</div>
+                    <div class="plan-author">
+                      <%= plan_details.author %>
+                    </div>
 
-<div class="plan-author-info">
-<%= plan_details.author_info %>
-</div>
-</div>
-</div>
-<div class="small-3 columns" id="plan-button">
-  <div class="plan-sign-up">
-<%= button_to "", user_plan_path(@user, plan_details), :id => "plan-#{plan.id}-quit" , method: :delete, :class => 'quit_plan' %>
-</div>
-</div>
-</div>
-</div>
-<% end %>
+                    <div class="plan-author-info">
+                      <%= plan_details.author_info %>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-3 columns" id="plan-button">
+                  <div class="plan-sign-up">
+                    <%= button_to "", user_plan_path(@user, plan_details), :id => "plan-#{plan.id}-quit" , method: :delete, :class => 'quit_plan' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
 
 
-</div>
-</div>
-</div>
+        </div>
+      </div>
+    </div>
 
-</div>
+  </div>
