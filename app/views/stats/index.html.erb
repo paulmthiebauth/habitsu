@@ -78,24 +78,18 @@
       <div class="featured-title">
         <h3>Current Plans <h3>
           </div>
-
-
           <% @plans.each do |plan| %>
             <% plan_details =  Plan.find(plan.plan_id) %>
             <div class="featured-plans-list">
               <div class="row">
-
                 <div class="small-9 columns">
                   <div class="plan-info">
-
                     <div class="plan-name">
                       <%= plan_details.plan_name %>
                     </div>
-
                     <div class="plan-author">
                       <%= plan_details.author %>
                     </div>
-
                     <div class="plan-author-info">
                       <%= plan_details.author_info %>
                     </div>
@@ -109,10 +103,7 @@
               </div>
             </div>
           <% end %>
-
-
         </div>
       </div>
     </div>
-
   </div>
