@@ -23,4 +23,8 @@ class PlansController < ApplicationController
     flash[:notice] = "You've successfully unenrolled."
     redirect_to user_stats_path(user)
   end
+
+  def new
+    @plan = Plan.new
+  end
 end
