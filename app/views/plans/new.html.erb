@@ -1,1 +1,47 @@
-Sup
+<div class="row">
+<div class="small-7 columns">
+<div class="create-plan-container">
+<%= form_for @plan do |f| %>
+
+
+<div class="create-plan-title">
+<%= f.label "Plan Name:" %>
+</div>
+<div class = "create-plan-field"%>
+<%= f.text_field :plan_name %>
+</div>
+
+
+<div class="create-plan-title">
+<%= f.label "Author Name:" %>
+</div>
+<div class = "create-plan-field"%>
+<%= f.text_field :author %>
+</div>
+
+
+<div class="create-plan-title">
+<%= f.label "Author Bio:" %>
+</div>
+<div class = "create-plan-field-bio"%>
+<%= f.text_field :author_info %>
+</div>
+
+<div class="create-plan-submit">
+<%= f.submit %>
+</div>
+
+<% end %>
+</div>
+</div>
+<div class="small-5 columns">
+  <div class="plan-new-container">
+  <div class="plan-new-welcome-header">
+    <h3>Welcome</h3>
+  </div>
+  Well, the way they make shows is, they make one show. That show's called a pilot.
+  Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.
+  Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.
+</div>
+</div>
+</div>
