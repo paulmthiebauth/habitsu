@@ -743,7 +743,6 @@ height: 775px;
   text-transform: lowercase;
 }
 
-
 .create-your-own-plan {
   text-align: center;
   padding-bottom: 20px;
@@ -754,12 +753,13 @@ height: 775px;
 }
 .create-plan-title label {
   font-size: 20px;
-  text-align: center;
 }
-.create-plan-field-bio input {
-  height: 200px;
+.create-plan-field-bio textarea {
+  height: 225px;
   border-radius: 5px;
-  border: 2px dashed #e8e8e8;
+  border: 2px solid #e8e8e8;
+  text-align: top;
+  vertical-align: top;
 }
 
 .create-plan-submit {
@@ -772,7 +772,7 @@ height: 775px;
   padding: 7.5px;
   padding-bottom: 15px;
   margin-bottom: 25px;
-  height: 400px;
+  height: 520px;
 }
 
 .create-plan-container {
@@ -780,7 +780,7 @@ height: 775px;
   padding: 7.5px;
   padding-bottom: 15px;
   margin-bottom: 25px;
-  height: 400px;
+  height: 520px;
   border: 2px solid #e8e8e8;
 }
 
@@ -795,7 +795,38 @@ height: 775px;
 }
 
 .create-plan-field input {
-  text-align: center;
   margin: auto 0;
   border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.create-your-own-plan-link {
+  background-color: #FFDAB4;
+  border-radius: 4px;
+  text-align: center;
+  color: #455a64;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+.featured-title-new h3 {
+background-color: #CEFFB5;
+border-radius: 4px;
+text-align: center;
+color: #455a64;
+font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+
+
+.featured-title-blue h3 {
+background-color: #C4E1FF;
+border-radius: 4px;
+text-align: center;
+color: #455a64;
+font-family: 'Quicksand', sans-serif; font-weight: 400;
+margin-bottom: 20px;
+}
+
+.create-plan-title-subtext {
+  font-size: 14px;
 }

@@ -6,6 +6,7 @@
 <h3>Featured Plans<h3>
 </div>
 
+
 <% @plans.each do |plan| %>
 <div class="featured-plans-list">
 <div class="row">
@@ -48,14 +49,14 @@
 <div class="large-6 columns">
   <div class="create-your-own-plan">
   <div class="featured-plans">
-    <div class="featured-title">
-    <h3>Create Your Own Plan<h3>
+    <div class="featured-title-new">
+      <h3><%= image_tag('/badges1.png') %> <%= link_to "Create Your Own Plan", new_plan_path %></h3>
     </div>
   </div>
 </div>
 
   <div class="featured-plans">
-    <div class="featured-title">
+    <div class="featured-title-blue">
     <h3>Browse By Goal<h3>
     </div>
     <div class="featured-plans-list">
