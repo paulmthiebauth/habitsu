@@ -1,0 +1,66 @@
+<div class="row">
+<div class="small-7 columns">
+<div class="create-plan-container">
+<%= form_for @plan do |f| %>
+
+
+<div class="create-plan-title">
+<%= f.label "Plan Name:" %>
+<div class="create-plan-title-subtext">
+Whats the overall objective?
+</div>
+</div>
+<div class = "create-plan-field"%>
+<%= f.text_field :plan_name, :required => true %>
+</div>
+
+
+<div class="create-plan-title">
+<%= f.label "Author Name:" %>
+<div class="create-plan-title-subtext">
+  Nickname works too if you'd prefer not to share!
+</div>
+</div>
+<div class = "create-plan-field"%>
+<%= f.text_field :author, :required => true %>
+</div>
+
+
+<div class="create-plan-title">
+<%= f.label "Author Bio:" %>
+<div class="create-plan-title-subtext">
+Tell us a bit about yourself!
+</div>
+</div>
+<div class = "create-plan-field-bio"%>
+<%= f.text_area :author_info, :required => true %>
+</div>
+
+<div class="create-plan-submit">
+<%= f.submit %>
+</div>
+
+<% end %>
+</div>
+</div>
+
+<div class="small-5 columns">
+  <div class="plan-new-container">
+  <div class="plan-new-welcome-header">
+    <h3>Lets get started!</h3>
+  </div>
+  Well, the way they make shows is, they make one show. That show's called a pilot.
+  Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.
+  Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.
+
+
+</div>
+
+<div class="step-2-container">
+<div class="featured-title-new">
+  <h3>Next well add some habits-></h3>
+</div>
+</div>
+
+</div>
+</div>

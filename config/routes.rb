@@ -22,6 +22,8 @@ Rails.application.routes.draw do
         resources :tasks
         end
 
+     resources :habits
+
       resources :tasks do
         member do
           patch :complete, :incomplete

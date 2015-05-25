@@ -291,8 +291,6 @@ height: 550px;
   align: center;
 }
 
-
-
 .field2 {
   padding-top: 20px;
   width: 50%;
@@ -743,4 +741,109 @@ height: 775px;
   padding-top: 25px;
   font-size: 18px;
   text-transform: lowercase;
+}
+
+.create-your-own-plan {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.create-plan-container {
+  height: 600px;
+}
+.create-plan-title label {
+  font-size: 20px;
+}
+.create-plan-field-bio textarea {
+  height: 225px;
+  border-radius: 5px;
+  border: 2px solid #e8e8e8;
+  text-align: top;
+  vertical-align: top;
+}
+
+.create-plan-submit {
+  text-align: center;
+}
+
+.plan-new-container {
+  border: 2px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 7.5px;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  height: 390px;
+}
+
+.step-2-container {
+  height: 65px;
+  border: 2px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 7.5px;
+}
+
+.create-plan-container {
+  border-radius: 4px;
+  padding: 7.5px;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  height: 520px;
+}
+
+.plan-new-welcome-header h3 {
+  background-color: #C4E1FF;
+  border-bottom: 1px solid #e8e8e8;
+  text-align: center;
+  color: #455a64;
+  border-radius: 4px;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.create-plan-field input {
+  margin: auto 0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.create-your-own-plan-link {
+  background-color: #FFDAB4;
+  border-radius: 4px;
+  text-align: center;
+  color: #455a64;
+  font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+.featured-title-new h3 {
+background-color: #CEFFB5;
+border-radius: 4px;
+text-align: center;
+color: #455a64;
+font-family: 'Quicksand', sans-serif; font-weight: 400;
+}
+
+
+
+.featured-title-blue h3 {
+background-color: #C4E1FF;
+border-radius: 4px;
+text-align: center;
+color: #455a64;
+font-family: 'Quicksand', sans-serif; font-weight: 400;
+margin-bottom: 20px;
+}
+
+.create-plan-title-subtext {
+  font-size: 14px;
+}
+
+
+.user-created-plans-list {
+  margin-bottom: 20px;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+.plan-signup-count {
+text-align: center;
 }

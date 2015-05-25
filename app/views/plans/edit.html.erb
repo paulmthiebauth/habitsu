@@ -1,0 +1,52 @@
+<div class="row">
+<div class="small-6 columns">
+<div class="row">
+<div class="small-12 columns">
+<%= form_for @plan, :action => :update do |f| %>
+
+<%= f.label "Plan Name:" %>
+<%= f.text_field :plan_name %>
+
+<%= f.label "Author Name:" %>
+<%= f.text_field :author %>
+
+<%= f.label "Description:" %>
+<%= f.text_field :author_info %>
+
+<%= f.submit %>
+<% end %>
+</div>
+
+</div>
+</div>
+<div class="small-6 columns">
+<div class="row">
+
+  <div class="small-12 columns">
+
+  <%= form_for @new_habit do |f| %>
+
+
+  <%= f.label "Looking to add a habit to your plan?" %>
+  <%= f.text_field :name, :required => true %>
+  <%= hidden_field_tag 'current_plan', params[:id] %>
+
+  <%= f.submit "Add Habit" %>
+
+  <% end %><br>
+  </div>
+<div class="small-12 columns">
+Current habits for your plan:<br>
+
+<% if !@habits.empty? %>
+<% @habits.each do |habit| %>
+<%= link_to "X", habit_path(habit.habit_id, plan: @plan.id), :method => :delete %><%= Habit.find(habit.habit_id).name %><br>
+<% end %>
+<% else %>
+Your plan doesn't have any habits yet!  Please add some.
+<% end %>
+</div>
+
+</div>
+</div>
+</div>

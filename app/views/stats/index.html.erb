@@ -105,5 +105,27 @@
           <% end %>
         </div>
       </div>
+      <div class="large-6 columns">
+        <div class="featured-plans">
+          <div class="featured-title">
+        <h3>Plans you've created</h3>
+      </div>
+      <div class="user-created-plans-list">
+        <% @authored_plans.each do |plan| %>
+
+        <div class="row">
+          <div class="small-7 columns">
+        <%= link_to plan.plan_name, edit_plan_path(plan.id) %>
+      </div>
+      <div class="small-5 columns">
+        <div class="plan-signup-count">
+      <%= Signup.where(plan_id: plan.id).count %>
+    </div>
+      </div>
+      </div>
+        <% end %>
+    </div>
+      </div>
+      </div>
     </div>
   </div>
