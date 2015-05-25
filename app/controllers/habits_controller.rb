@@ -10,4 +10,11 @@ class HabitsController < ApplicationController
     Planhabit.create(plan_id: current_plan_id, habit_id: new_habit.id)
     redirect_to edit_plan_path(current_plan_id)
   end
+
+  def destroy
+    Dailyhabit.where(habit_id: params[:id]).destroy_all
+    Planhabit.where(habit_id: params[:id]).destroy_all
+    Habit.find(params[:id]).destroy
+    redirect_to edit_plan_path(params[:plan])
+  end
 end

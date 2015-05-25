@@ -772,7 +772,14 @@ height: 775px;
   padding: 7.5px;
   padding-bottom: 15px;
   margin-bottom: 25px;
-  height: 520px;
+  height: 390px;
+}
+
+.step-2-container {
+  height: 65px;
+  border: 2px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 7.5px;
 }
 
 .create-plan-container {
@@ -781,7 +788,6 @@ height: 775px;
   padding-bottom: 15px;
   margin-bottom: 25px;
   height: 520px;
-  border: 2px solid #e8e8e8;
 }
 
 .plan-new-welcome-header h3 {
@@ -829,4 +835,15 @@ margin-bottom: 20px;
 
 .create-plan-title-subtext {
   font-size: 14px;
+}
+
+
+.user-created-plans-list {
+  margin-bottom: 20px;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+.plan-signup-count {
+text-align: center;
 }
