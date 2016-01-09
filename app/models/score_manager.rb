@@ -9,29 +9,24 @@ class ScoreManager
   end
 
   def daily_scores
-    day_score = 0
-    if @num_days_ago > 0
-      date = @num_days_ago.days.ago.localtime
-    else
-      date = DateTime.now
-    end
-    weekday = date.strftime('%A')
-    if check_todays_score(date).empty?
+    @day_score = 0
+    @date = calculate_date
+    weekday = @date.strftime('%A')
+
+    if no_score_for_today
       Dailyscore.create(
-        user_id: @user.id, date: date, weekday: weekday, total_score: 0
+        user_id: @user.id, date: @date, weekday: weekday, total_score: 0
       )
     else
-      @habits.each do |habit|
-        day_score += habit.point_value
-      end
+      calculate_day_score
       Dailyscore.where(
         user_id: @user.id, weekday: weekday
       ).where(
-        date: (date.beginning_of_day)..date.end_of_day).first.update(
-        total_score: day_score
+        date: (@date.beginning_of_day)..@date.end_of_day).first.update(
+        total_score: @day_score
       )
     end
-    check_todays_score(date).first.total_score
+    check_todays_score(@date).first.total_score
   end
 
 
@@ -57,6 +52,28 @@ class ScoreManager
       end
     end
     weekly_score_hash
+  end
+
+  def calculate_day_score
+    @habits.each do |habit|
+      @day_score += habit.point_value
+    end
+  end
+
+  def calculate_date
+    if @num_days_ago > 0
+      date = @num_days_ago.days.ago.localtime
+    else
+      date = DateTime.now
+    end
+  end
+
+  def create_daily_score
+
+  end
+
+  def no_score_for_today
+    check_todays_score(@date).empty?
   end
 
   def check_todays_score(date)
