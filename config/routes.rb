@@ -22,6 +22,8 @@ Rails.application.routes.draw do
         resources :tasks
         end
 
+     resources :personal_habits
+
      resources :habits
 
       resources :tasks do

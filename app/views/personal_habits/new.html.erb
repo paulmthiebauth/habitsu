@@ -1,0 +1,59 @@
+<h1>Create a new Personal Habit</h1>
+
+<div class="row">
+  <%= form_for @personal_habit, class: "col s12" do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :habit_name %>
+        <%= f.text_field :habit_name %>
+      </div>
+    </div>
+
+    <%= f.fields_for :frequency do |ff| %>
+      <p>
+        <%= ff.check_box :monday, for: :monday %>
+        <%= ff.label :monday %>
+      </p>
+
+      <p>
+        <%= ff.check_box :tuesday %>
+        <%= ff.label :tuesday %>
+      </p>
+
+      <p>
+        <%= ff.check_box :wednesday %>
+        <%= ff.label :wednesday %>
+      </p>
+
+      <p>
+        <%= ff.check_box:thursday %>
+        <%= ff.label :thursday %>
+      </p>
+
+      <p>
+        <%= ff.check_box :friday %>
+        <%= ff.label :friday %>
+      </p>
+
+      <p>
+        <%= ff.check_box :saturday %>
+        <%= ff.label :saturday %>
+      </p>
+
+      <p>
+        <%= ff.check_box :sunday %>
+        <%= ff.label :sunday %>
+      </p>
+
+      <p>
+        <%= ff.check_box :daily %>
+        <%= ff.label :daily %>
+      </p>
+    <% end %>
+
+    </br>
+    <%= f.submit "Add Habit", class: "btn black white-text" %>
+  <% end %>
+</div>
+
+<%= link_to 'Back', personal_habits_path %>

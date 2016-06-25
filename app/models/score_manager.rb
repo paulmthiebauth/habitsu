@@ -17,14 +17,14 @@ class ScoreManager
     end
     weekday = date.strftime('%A')
     if check_todays_score(date).empty?
-      Dailyscore.create(
+      DailyScore.create(
         user_id: @user.id, date: date, weekday: weekday, total_score: 0
       )
     else
       @habits.each do |habit|
         day_score += habit.point_value
       end
-      Dailyscore.where(
+      DailyScore.where(
         user_id: @user.id, weekday: weekday
       ).where(
         date: (date.beginning_of_day)..date.end_of_day).first.update(
@@ -43,7 +43,7 @@ class ScoreManager
     until count == 7
       weekday = date.localtime.strftime('%A')
       if check_todays_score_localtime(date).first.nil?
-        Dailyscore.create(
+        DailyScore.create(
           user_id: @user.id, date: count.days.ago.localtime,
           weekday: weekday, total_score: 0
         )
@@ -60,13 +60,13 @@ class ScoreManager
   end
 
   def check_todays_score(date)
-    Dailyscore.where(user_id: @user.id
+    DailyScore.where(user_id: @user.id
     ).where(
     date: (date.beginning_of_day)..date.end_of_day)
   end
 
   def check_todays_score_localtime(date)
-    Dailyscore.where(user_id: @user.id
+    DailyScore.where(user_id: @user.id
     ).where(
     date: (date.localtime.beginning_of_day)..date.localtime.end_of_day)
   end

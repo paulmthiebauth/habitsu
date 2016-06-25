@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def index
     if signed_in?
       @user = current_user
-      @scores = Dailyscore.where(user_id: @user.id)
+      @scores = DailyScore.where(user_id: @user.id)
       User.weekly_completion_data(@weekly_scores)
       @homepage_scores = PieManager.new(@user, @scores).home_scores
       respond_to do |format|
@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     TaskManager.new(@user, @current_page).update_tasks
     @tasks = TaskManager.new(@user, @current_page).organized_tasks
     @habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
+    @personal_habits = PersonalHabit.where(user_id: current_user.id)
     @todays_score = ScoreManager.new(@user, @habits, @current_page).daily_scores
     @weekly_scores = ScoreManager.new(@user, @habits, @current_page).weekly_scores
     @date = @current_page.days.ago.localtime

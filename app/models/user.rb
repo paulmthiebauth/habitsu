@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tasks
 
+  has_many :personal_habits
   has_many :habits, through: :plans
   has_many :plans, through: :signups
 

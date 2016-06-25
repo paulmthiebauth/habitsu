@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Personal Habits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personal_habits.each do |personal_habit| %>
+      <tr>
+      <%= personal_habit.habit_name %>
+        <td><%= link_to 'Show', personal_habit %></td>
+        <td><%= link_to 'Edit', edit_personal_habit_path(personal_habit) %></td>
+        <td><%= link_to 'Destroy', personal_habit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personal habit', new_personal_habit_path %>

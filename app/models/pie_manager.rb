@@ -51,7 +51,7 @@ class PieManager
   end
 
   def user_dailyscore
-    Dailyscore.where(user_id: @user.id)
+    DailyScore.where(user_id: @user.id)
   end
 
   def user_todays_date_range(count)
