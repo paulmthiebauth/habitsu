@@ -30,8 +30,12 @@ class UsersController < ApplicationController
     end
     TaskManager.new(@user, @current_page).update_tasks
     @tasks = TaskManager.new(@user, @current_page).organized_tasks
-    @habits = HabitManager.new(@user, @user.habits, @current_page).daily_habits
-    @personal_habits = PersonalHabit.where(user_id: current_user.id)
+
+
+    @habits = HabitManager.new(@user, @user.habits, @user.personal_habits, @current_page).daily_habits
+    @daily_personal_habits = HabitManager.new(@user, @user.habits, @user.personal_habits, @current_page).daily_personal_habits
+
+    binding.pry
     @todays_score = ScoreManager.new(@user, @habits, @current_page).daily_scores
     @weekly_scores = ScoreManager.new(@user, @habits, @current_page).weekly_scores
     @date = @current_page.days.ago.localtime

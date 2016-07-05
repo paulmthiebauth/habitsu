@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Personal Habit Completions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personal_habit_completions.each do |personal_habit_completion| %>
+      <tr>
+        <td><%= link_to 'Show', personal_habit_completion %></td>
+        <td><%= link_to 'Edit', edit_personal_habit_completion_path(personal_habit_completion) %></td>
+        <td><%= link_to 'Destroy', personal_habit_completion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personal habit completion', new_personal_habit_completion_path %>

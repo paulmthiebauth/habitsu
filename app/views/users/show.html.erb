@@ -92,24 +92,26 @@
   </div>
   <div class="habit">
       <div>
-
-
-
         <% if @user.plans.empty? && @user.personal_habits.empty? %>
           <div class="noplan">
             You haven't added any habits yet! <a href="/plans">Click here to get started.</a>
           </div>
         <% end %>
 
-        <div class="plan-container">
-          <div class="planname">
-          Personal Habits
-          </div>
+        <% unless @daily_personal_habits.nil? %>
+          <div class="plan-container">
+            <div class="planname">
+            Personal Habits
+            </div>
 
-            <% @personal_habits.each do |personal_habit| %>
-              <%= personal_habit.habit_name %>
+            <% @daily_personal_habits.each do |personal_habit| %>
+            <% binding.pry %>
+              <div class="personal-habit">
+                <%= personal_habit.habit_name %>
+              </div>
             <% end %>
-        </div>
+          </div>
+        <%end%>
 
         <% @plans.each do |plan|%>
         <div class="plan-container">

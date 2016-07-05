@@ -1,10 +1,63 @@
 ###Note : clean this up!!!
 
 class HabitManager
-  def initialize(user, habits, num_days_ago)
+  def initialize(user, plan_habits, personal_habits, num_days_ago)
     @user = user
-    @habits = habits
+    @habits = plan_habits
     @num_days_ago = num_days_ago.to_i
+    @personal_habits = personal_habits
+  end
+
+  def daily_personal_habits
+    if @num_days_ago > 0
+      date = @num_days_ago.days.ago.localtime
+      second_counter = 1
+      @personal_habits.each do |habit|
+        if days_personal_habits(date, habit).empty?
+          plan = Planhabit.where(habit_id: habit.id)
+          create_daily_habit(@user, habit, plan, date + second_counter.second)
+          second_counter += 1
+        else
+          days_habits(date, habit).first.update(streak_count: 0)
+        end
+      end
+      daily = Dailyhabit.where(
+      user_id: @user.id,
+      date: todays_date_range(date)
+      )
+
+    else
+      date = DateTime.now
+      daily = @user.personal_habit_completions.where(
+      date: (date.beginning_of_day..date.end_of_day))
+
+      if daily.empty?
+        @user.personal_habits.each do |personal_habit|
+          binding.pry
+          PersonalHabitCompletion.create(user_id: @user.id, personal_habit_id: personal_habit.id, habit_name: personal_habit.habit_name, date: DateTime.now, completed_at: nil)
+        end
+        daily = PersonalHabitCompletion.where(date: todays_date_range(date))
+      else
+        @personal_habits.each do |habit|
+          if PersonalHabitCompletion.where(
+            user_id: @user.id,
+            personal_habit_id: habit.id
+            ).where(
+            "date >= ?", DateTime.now.beginning_of_day
+            ).empty?
+
+            # plan = Planhabit.where(habit_id: habit.id)
+            # create_daily_habit(@user, habit, plan, DateTime.now)
+
+            daily = PersonalHabitCompletion.where(
+              user_id: @user.id,
+              date: todays_date_range(date)
+            )
+          end
+        end
+        daily
+      end
+    end
   end
 
   def daily_habits
@@ -73,6 +126,10 @@ class HabitManager
 
 
 ###Possibly remove .where, test performance
+
+  def days_personal_habits(date, habit)
+    PersonalHabitCompletion.where(user_id: @user.id, habit_name: habit.habit_name).where(date: todays_date_range(date))
+  end
 
   def days_habits(date, habit)
     Dailyhabit.where(

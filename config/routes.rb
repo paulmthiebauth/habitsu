@@ -20,7 +20,8 @@ Rails.application.routes.draw do
           get 'yesterday'
         end
         resources :tasks
-        end
+        resources :personal_habit_completion
+      end
 
      resources :personal_habits
 

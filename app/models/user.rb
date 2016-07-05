@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :tasks
 
   has_many :personal_habits
+  has_many :personal_habit_completions
   has_many :habits, through: :plans
   has_many :plans, through: :signups
 
